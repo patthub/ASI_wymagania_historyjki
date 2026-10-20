@@ -3,252 +3,311 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wymagania funkcjonalne — ASI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<title>Temat 1. Wymagania funkcjonalne</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <b>ASI</b><span>Architektura systemów informacyjnych · zajęcia asynchroniczne</span>
-  <nav><a href="index.html">0 start</a><a href="wymagania.html" aria-current="page">1 wymagania</a><a href="historyjki.html">2 historyjki</a></nav>
-</header>
+<header class="top"><div class="inner">
+  <div class="course">Architektura systemów informacyjnych<small>Zajęcia asynchroniczne</small></div>
+  <nav><a href="index.html">Start</a><a href="wymagania.html" aria-current="page">Temat 1. Wymagania funkcjonalne</a><a href="historyjki.html">Temat 2. Historyjki użytkownika</a></nav>
+</div></header>
+<div class="wrap">
+<aside class="toc"><b>W tym temacie</b><ol></ol></aside>
 <main>
-  <p class="meta">temat 1</p>
-  <h1>Wymagania funkcjonalne</h1>
-  <p class="lead">Wymaganie to zdanie, z którym można się nie zgodzić i które można sprawdzić. Jeśli nie da się ani jednego, ani drugiego — to jest życzenie.</p>
+  <p class="crumbs">Start › Temat 1</p>
+  <h1>Temat 1. Wymagania funkcjonalne</h1>
+  <div class="info"><span>Czas: ok. 90 minut</span><span>Ćwiczenia: 5 + ćwiczenie samodzielne</span></div>
 
-  <h2><span class="no">1.1</span>Najdroższe nieporozumienie</h2>
-  <p>Wiegers i Beatty otwierają swój podręcznik scenką, którą zna każdy, kto pracował przy systemie informacyjnym. Dział kadr dzwoni do programisty: pracownica zmieniła nazwisko, a system nie pozwala tego wpisać. Okazuje się, że zmiana nazwiska była możliwa tylko razem ze zmianą stanu cywilnego — bo programiście nie przyszło do głowy, że można zmienić nazwisko z innego powodu. Kadrowa była pewna, że „to przecież oczywiste”. Nikt tego nie zapisał, nikt nie zapytał. Wypłata jest w piątek.</p>
-  <p>Nikt tu nie popełnił błędu w kodzie. Kod robił dokładnie to, co miał robić — tylko że „co miał robić” nigdy nie zostało ustalone.</p>
-  <blockquote>Najtrudniejszym etapem tworzenia systemu komputerowego jest podjęcie precyzyjnej decyzji dotyczącej tego, co należy zbudować.<br><small>— F. Brooks, <i>No Silver Bullet</i> (1987), cyt. za Wiegers, Beatty</small></blockquote>
-  <p>Kilka liczb przytaczanych w tym kontekście: błędy powstałe przy definiowaniu wymagań odpowiadają za 40–50% wszystkich usterek w oprogramowaniu (Davis, 2005), a przeróbki pochłaniają często 30–50% całkowitego kosztu wytworzenia (Shull i in., 2002). Do tego dochodzi efekt dźwigni: im później błąd w wymaganiach wyjdzie na jaw, tym więcej rzeczy zbudowano na jego podstawie.</p>
+  <div class="box">
+    <span class="label">Cele tematu</span>
+    <p>Po zakończeniu tego tematu będziesz umieć:</p>
+    <ul>
+      <li>wyjaśnić, dlaczego błędy w wymaganiach są szczególnie kosztowne,</li>
+      <li>rozróżnić wymagania biznesowe, wymagania użytkownika i wymagania funkcjonalne,</li>
+      <li>odróżnić wymaganie funkcjonalne od pozafunkcjonalnego,</li>
+      <li>zapisać wymaganie funkcjonalne według szablonu,</li>
+      <li>rozpoznać i poprawić niejednoznaczne wymaganie.</li>
+    </ul>
+  </div>
+
+  <h2>1.1. Dlaczego wymagania są ważne?</h2>
+  <p>Zacznijmy od przykładu, który podają Wiegers i Beatty w swoim podręczniku. Pracownica działu kadr dzwoni do programisty, który przygotował system kadrowy. Jedna z pracownic zmieniła nazwisko, ale system nie pozwala wprowadzić tej zmiany. Okazuje się, że w systemie nazwisko można zmienić tylko razem ze zmianą stanu cywilnego. Programista nie wiedział, że nazwisko można zmienić z innego powodu. Dział kadr uważał to za oczywiste i nikomu o tym nie powiedział. Tymczasem zbliża się termin wypłaty.</p>
+  <p>W tej sytuacji kod działał poprawnie, czyli dokładnie tak, jak go zaprojektowano. Problem polegał na tym, że nikt nie ustalił i nie zapisał, jak system ma działać.</p>
+
+  <div class="box remember">
+    <span class="label">Warto wiedzieć</span>
+    <ul>
+      <li>Błędy popełnione przy definiowaniu wymagań odpowiadają za 40–50% wszystkich usterek w oprogramowaniu (Davis, 2005).</li>
+      <li>Poprawianie wykonanej już pracy pochłania często 30–50% całkowitego kosztu projektu (Shull i in., 2002).</li>
+      <li>Frederick Brooks (1987) uznał, że najtrudniejszą częścią budowy systemu jest precyzyjne ustalenie, co należy zbudować.</li>
+    </ul>
+  </div>
+
+  <p>Im później wykryjemy błąd w wymaganiach, tym więcej elementów systemu zostało już na nim zbudowanych i tym droższa jest jego poprawa. Sprawdź to w krótkiej symulacji.</p>
 
   <div class="ex cost">
-    <span class="tag">symulacja · koszt jednego błędu</span>
-    <p>Ten sam błąd w wymaganiu (np. „nazwisko zmienia się tylko przy ślubie”). Kiedy go wykryto? Skala umowna, za Boehmem (1981): naprawa w fazie wymagań = 1.</p>
+    <span class="tag">Symulacja: koszt naprawy błędu</span>
+    <p>Wyobraź sobie błąd w wymaganiu, np. „nazwisko można zmienić tylko przy zmianie stanu cywilnego”. Wybierz moment, w którym ten błąd został wykryty. Koszt podano w skali umownej (za: Boehm, 1981), gdzie poprawka na etapie wymagań kosztuje 1.</p>
     <p style="display:flex;flex-wrap:wrap;gap:.4rem">
-      <button type="button" data-x="1" data-t="Poprawiasz jedno zdanie w dokumencie. Nic jeszcze na nim nie zbudowano.">przy przeglądzie wymagań</button>
-      <button type="button" data-x="3" data-t="Poprawiasz wymaganie i projekt, który na nim oparto (model danych, ekrany).">przy projektowaniu</button>
-      <button type="button" data-x="10" data-t="Do tego kod, testy jednostkowe i to, co od tego kodu zależy.">przy programowaniu</button>
-      <button type="button" data-x="30" data-t="Do tego ponowne testy, przesunięty termin, rozmowy z zamawiającym.">przy testach akceptacyjnych</button>
-      <button type="button" data-x="100" data-t="Do tego poprawione dane produkcyjne, zgłoszenia, wdrożenie poprawki — i pracownica bez wypłaty.">po wdrożeniu</button>
+      <button type="button" data-x="1" data-t="Wystarczy poprawić jedno zdanie w dokumentacji.">Podczas przeglądu wymagań</button>
+      <button type="button" data-x="3" data-t="Trzeba poprawić wymaganie oraz projekt oparty na tym wymaganiu, np. model danych i ekrany.">Podczas projektowania</button>
+      <button type="button" data-x="10" data-t="Trzeba poprawić wymaganie, projekt, kod i testy.">Podczas programowania</button>
+      <button type="button" data-x="30" data-t="Dochodzi ponowne testowanie, przesunięcie terminu i dodatkowe rozmowy z zamawiającym.">Podczas testów akceptacyjnych</button>
+      <button type="button" data-x="100" data-t="Dochodzi poprawianie danych, obsługa zgłoszeń, ponowne wdrożenie, a także skutki dla użytkowników (np. opóźniona wypłata).">Po wdrożeniu systemu</button>
     </p>
     <div class="bar"><span></span></div>
-    <p class="note muted">Wybierz moment wykrycia.</p>
+    <p class="note muted">Wybierz jedną z opcji powyżej.</p>
   </div>
 
   <div class="ex check">
-    <span class="tag">autodiagnoza</span>
-    <p>Pomyśl o ostatnim projekcie, w którym brałeś/brałaś udział — może być studencki, zespołowy, a nawet hobbystyczny. Zaznacz, co się zdarzyło. (Lista inspirowana autotestem z rozdz. 1 Wiegersa i Beatty).</p>
-    <label><input type="checkbox"> Nikt jasno nie powiedział, po co właściwie powstaje ten system.</label>
+    <span class="tag">Autodiagnoza</span>
+    <p>Pomyśl o ostatnim projekcie, w którym brałeś(-aś) udział. Może to być projekt studencki lub zespołowy. Zaznacz sytuacje, które się w nim zdarzyły.</p>
+    <label><input type="checkbox"> Nie było jasne, po co właściwie powstaje system.</label>
     <label><input type="checkbox"> Osoba, dla której robiliśmy projekt, nie miała dla nas czasu.</label>
     <label><input type="checkbox"> Wszystko było „najważniejsze”, więc niczego nie dało się odłożyć.</label>
-    <label><input type="checkbox"> W trakcie pisania kodu trzeba było zgadywać, jak coś ma działać.</label>
-    <label><input type="checkbox"> Rozmowy dotyczyły głównie wyglądu ekranów, a nie tego, co użytkownik ma osiągnąć.</label>
-    <label><input type="checkbox"> Zakres rósł, a termin się nie przesuwał.</label>
-    <label><input type="checkbox"> Zrobiliśmy funkcję, z której potem nikt nie skorzystał.</label>
-    <label><input type="checkbox"> Wszystko zrobiliśmy „zgodnie z ustaleniami”, a zamawiający i tak nie był zadowolony.</label>
-    <p class="score">0 / 8</p>
+    <label><input type="checkbox"> Podczas programowania trzeba było zgadywać, jak coś ma działać.</label>
+    <label><input type="checkbox"> Rozmawialiśmy głównie o wyglądzie ekranów, a mniej o tym, co użytkownik ma osiągnąć.</label>
+    <label><input type="checkbox"> Zakres prac się zwiększał, a termin pozostawał bez zmian.</label>
+    <label><input type="checkbox"> Zrobiliśmy funkcję, z której nikt potem nie korzystał.</label>
+    <label><input type="checkbox"> Zrobiliśmy wszystko zgodnie z ustaleniami, a zamawiający i tak nie był zadowolony.</label>
+    <p class="score">Zaznaczono: 0 / 8</p>
   </div>
 
-  <h2><span class="no">1.2</span>Poziomy i rodzaje wymagań</h2>
-  <p>Słowo „wymaganie” znaczy co innego dla dziekana, dla studenta i dla programisty. Jedną z bardziej użytecznych definicji podają Sommerville i Sawyer (1997): wymagania określają, <i>co</i> ma zostać zaimplementowane — opisują zachowanie systemu albo jego właściwości i mogą nakładać ograniczenia na sposób jego tworzenia. Żeby się nie pogubić, Wiegers i Beatty rozróżniają trzy poziomy i kilka rodzajów informacji obok nich.</p>
+  <h2>1.2. Poziomy i rodzaje wymagań</h2>
+  <p>Słowo „wymaganie” bywa rozumiane bardzo różnie. Dla dziekana może oznaczać cel, dla studenta potrzebę, a dla programisty opis funkcji. W tym kursie korzystamy z definicji Sommerville’a i Sawyera (1997): wymagania określają, co należy zaimplementować. Opisują zachowanie systemu albo jego właściwości i mogą też nakładać ograniczenia na sposób jego tworzenia.</p>
+  <p>Wiegers i Beatty wyróżniają trzy poziomy wymagań:</p>
 
   <ol class="levels">
-    <li><b>Wymaganie biznesowe</b> <span class="mono">dlaczego?</span><br>Cel organizacji, która zamawia system.<br><small>Wypożyczalnia: zmniejszyć liczbę spóźnionych i „zaginionych” zwrotów.</small></li>
-    <li><b>Wymaganie użytkownika</b> <span class="mono">co użytkownik ma osiągnąć?</span><br>Zadanie, które dana klasa użytkowników musi móc wykonać. Zapisuje się je m.in. jako przypadki użycia albo <a href="historyjki.html">historyjki</a>.<br><small>Student chce sprawdzić, czy laptop będzie wolny w czwartek.</small></li>
-    <li><b>Wymaganie funkcjonalne</b> <span class="mono">co system robi?</span><br>Zachowanie systemu w określonych warunkach — to, co programiści mają zaimplementować, żeby użytkownik mógł wykonać swoje zadanie.<br><small>System wyświetla egzemplarze z danej kategorii z dostępnością na wybrany dzień.</small></li>
+    <li><b>Wymagania biznesowe</b> odpowiadają na pytanie: <i>dlaczego</i> organizacja potrzebuje systemu? Opisują cel organizacji.<br><small>Przykład: zmniejszyć liczbę spóźnionych zwrotów sprzętu.</small></li>
+    <li><b>Wymagania użytkownika</b> odpowiadają na pytanie: <i>co</i> użytkownik ma osiągnąć za pomocą systemu? Opisują zadania, które dana grupa użytkowników musi móc wykonać. Można je zapisać m.in. jako przypadki użycia albo historyjki użytkownika (temat 2).<br><small>Przykład: student chce sprawdzić, czy laptop będzie dostępny w czwartek.</small></li>
+    <li><b>Wymagania funkcjonalne</b> odpowiadają na pytanie: <i>co robi system</i>? Opisują zachowanie systemu w określonych warunkach.<br><small>Przykład: system wyświetla listę laptopów wraz z informacją o ich dostępności w wybranym dniu.</small></li>
   </ol>
-  <p>Obok tych trzech poziomów:</p>
+
+  <p>Oprócz tych trzech poziomów spotkasz też inne rodzaje informacji:</p>
   <dl class="terms">
-    <dt><span>NFR</span>Wymagania pozafunkcjonalne</dt><dd>Atrybuty jakościowe (wydajność, bezpieczeństwo, dostępność…), interfejsy zewnętrzne (np. logowanie przez USOS) i ograniczenia (technologia, przepisy). Nazwa jest niezręczna — mówi, czym te wymagania <i>nie są</i> — ale się przyjęła.</dd>
-    <dt><span>RB</span>Reguły biznesowe</dt><dd>Regulaminy, przepisy, polityki, algorytmy obliczeniowe. Same nie są wymaganiami wobec systemu (istnieją niezależnie od niego), ale są <i>źródłem</i> wielu wymagań funkcjonalnych.</dd>
-    <dt><span>PRJ</span>Wymagania projektu</dt><dd>Wszystko, co trzeba zrobić, żeby projekt się udał, ale co nie jest częścią oprogramowania: szkolenia, migracja danych, sprzęt, licencje, dokumentacja dla użytkowników. Ważne — ale nie należą do specyfikacji wymagań oprogramowania (SRS).</dd>
+    <dt>Wymagania pozafunkcjonalne</dt>
+    <dd>Opisują cechy jakościowe systemu (np. wydajność, bezpieczeństwo, dostępność), interfejsy z innymi systemami (np. logowanie przez USOS) oraz ograniczenia (np. narzucona technologia, przepisy prawa).</dd>
+    <dt>Reguły biznesowe</dt>
+    <dd>Regulaminy, przepisy, zasady i sposoby obliczeń obowiązujące w organizacji. Same nie są wymaganiami wobec systemu, bo istnieją niezależnie od niego. Są jednak źródłem wielu wymagań funkcjonalnych.</dd>
+    <dt>Wymagania projektu</dt>
+    <dd>Wszystko, co trzeba zrobić, aby projekt się udał, ale co nie jest częścią oprogramowania, np. szkolenia, przeniesienie danych ze starego systemu, zakup sprzętu.</dd>
   </dl>
-  <p>W praktyce informacje płyną nie tylko z góry w dół. Każda nowa propozycja powinna przejść przez pytanie: <b>czy to mieści się w zakresie, czyli czy służy celom biznesowym?</b> Jeśli nie — nie trafia do tej wersji, nawet jeśli jest dobrym pomysłem.</p>
+
+  <div class="box remember">
+    <span class="label">Zapamiętaj</span>
+    Każde nowe wymaganie warto sprawdzić pytaniem: czy pomaga osiągnąć cel biznesowy? Jeśli nie, nie powinno trafić do bieżącej wersji systemu, nawet jeśli wydaje się dobrym pomysłem.
+  </div>
 
   <div class="ex">
-    <span class="tag">ćwiczenie 1 · który poziom</span>
-    <p>Wszystkie zdania pochodzą z notatek analityka wypożyczalni. Do jakiego rodzaju informacji należy każde z nich?</p>
+    <span class="tag">Ćwiczenie 1. Rozpoznaj rodzaj wymagania</span>
+    <p>Poniższe zdania pochodzą z notatek analityka pracującego nad systemem wypożyczalni. Określ, do jakiego rodzaju informacji należy każde z nich.</p>
     <ol class="sort" data-opts="B:biznesowe|U:użytkownika|F:funkcjonalne|N:pozafunkcjonalne|R:reguła biznesowa|P:projektu">
-      <li data-a="B" data-why="Cel organizacji, z liczbą i terminem. Nie mówi nic o tym, co system ma robić — to dopiero trzeba z niego wyprowadzić.">W ciągu roku od wdrożenia zmniejszyć o połowę liczbę wypożyczeń zwracanych po terminie.</li>
-      <li data-a="U" data-why="Zadanie, które konkretna klasa użytkowników chce wykonać. Jeszcze nie wiadomo, jak system ma to umożliwić.">Prowadząca chce zarezerwować komplet dyktafonów dla swojej grupy na badania terenowe.</li>
-      <li data-a="F" data-why="Konkretne zachowanie systemu w określonej sytuacji. To jedno z wymagań funkcjonalnych, które realizują zadanie z poprzedniego punktu.">Po zatwierdzeniu rezerwacji grupowej system wysyła prowadzącemu listę zarezerwowanych egzemplarzy z numerami inwentarzowymi.</li>
-      <li data-a="R" data-why="Zasada wypożyczalni, która obowiązywałaby także bez systemu (w zeszycie pani Ewy). Będzie źródłem wymagań funkcjonalnych, np. „system nie pozwala wybrać daty zwrotu późniejszej niż 14 dni”.">Regulamin wypożyczalni: sprzęt można wypożyczyć na maksymalnie 14 dni.</li>
-      <li data-a="N" data-why="Atrybut jakościowy — wydajność pod obciążeniem. Dotyczy wszystkich funkcji naraz.">Przy 200 jednocześnie zalogowanych użytkownikach czas odpowiedzi nie przekracza 2 s.</li>
-      <li data-a="P" data-why="Migracja danych to wymaganie projektu (tzw. przejściowe): trzeba je zrobić, żeby wdrożenie się udało, ale nie jest funkcją systemu.">Przed uruchomieniem systemu dane z zeszytu wypożyczalni z ostatnich dwóch lat zostaną przeniesione do bazy.</li>
-      <li data-a="U" data-why="Cel użytkownika, wyrażony jego językiem. Analityk wyprowadzi z niego wymagania funkcjonalne (wyszukiwanie, kalendarz dostępności).">Student chce wiedzieć, czy laptop będzie dostępny w czwartek, zanim przyjedzie na wydział.</li>
-      <li data-a="P" data-why="Szkolenie jest potrzebne projektowi, ale nie jest cechą oprogramowania.">Pracownicy wypożyczalni przejdą dwugodzinne szkolenie z obsługi nowego systemu.</li>
+      <li data-a="B" data-why="To cel organizacji, określony liczbą i terminem. Nie opisuje jeszcze, co ma robić system.">W ciągu roku od wdrożenia zmniejszyć o połowę liczbę wypożyczeń zwracanych po terminie.</li>
+      <li data-a="U" data-why="To zadanie, które chce wykonać konkretna grupa użytkowników. Nie wiadomo jeszcze, w jaki sposób system to umożliwi.">Prowadząca chce zarezerwować komplet dyktafonów dla swojej grupy na badania terenowe.</li>
+      <li data-a="F" data-why="To konkretne zachowanie systemu w określonej sytuacji. Realizuje wymaganie użytkownika z poprzedniego punktu.">Po zatwierdzeniu rezerwacji grupowej system wysyła prowadzącemu listę zarezerwowanych egzemplarzy z numerami inwentarzowymi.</li>
+      <li data-a="R" data-why="To zasada wypożyczalni, która obowiązuje także bez systemu. Wynikają z niej wymagania funkcjonalne, np. „system nie pozwala wybrać daty zwrotu późniejszej niż 14 dni od wypożyczenia”.">Regulamin wypożyczalni: sprzęt można wypożyczyć na maksymalnie 14 dni.</li>
+      <li data-a="N" data-why="To wymaganie dotyczące wydajności. Odnosi się do całego systemu, a nie do jednej funkcji.">Przy 200 jednocześnie zalogowanych użytkownikach czas odpowiedzi nie przekracza 2 sekund.</li>
+      <li data-a="P" data-why="Przeniesienie danych trzeba wykonać, aby wdrożenie się udało, ale nie jest to funkcja systemu.">Przed uruchomieniem systemu dane z zeszytu wypożyczalni z ostatnich dwóch lat zostaną przeniesione do bazy.</li>
+      <li data-a="U" data-why="To cel użytkownika opisany jego słowami. Analityk wyprowadzi z niego wymagania funkcjonalne, np. wyszukiwanie sprzętu i kalendarz dostępności.">Student chce wiedzieć, czy laptop będzie dostępny w czwartek, zanim przyjedzie na wydział.</li>
+      <li data-a="P" data-why="Szkolenie jest potrzebne w projekcie, ale nie jest cechą oprogramowania.">Pracownicy wypożyczalni przejdą dwugodzinne szkolenie z obsługi nowego systemu.</li>
     </ol>
   </div>
 
-  <h2><span class="no">1.3</span>Co system robi, a jak dobrze to robi</h2>
-  <p><b>Wymaganie funkcjonalne</b> opisuje zachowanie systemu: co system robi w odpowiedzi na określone dane wejściowe lub zdarzenie, jakie dane przetwarza i co zwraca. Odpowiada na pytanie <i>co?</i> Przykład: „System wysyła studentowi e-mail z przypomnieniem 24 godziny przed terminem zwrotu”.</p>
-  <p><b>Wymaganie pozafunkcjonalne</b> (często: <i>jakościowe</i>, ang. <i>non-functional</i>) opisuje, jak dobrze system ma działać albo w jakich ograniczeniach powstaje: wydajność, dostępność, bezpieczeństwo, użyteczność, przenośność, a także narzucone technologie czy przepisy. Odpowiada na pytanie <i>jak?</i> albo <i>w jakich warunkach?</i></p>
-  <p>Granica nie zawsze jest ostra. Dobry test: <b>czy da się to zdanie zrealizować jako konkretną funkcję, którą użytkownik albo inny system może wywołać i zobaczyć jej wynik?</b> Jeśli tak — najpewniej jest funkcjonalne. Jeśli opisuje cechę całego systemu albo wielu funkcji naraz — pozafunkcjonalne.</p>
+  <h2>1.3. Wymagania funkcjonalne i pozafunkcjonalne</h2>
+  <p><b>Wymaganie funkcjonalne</b> opisuje, co system robi: jak reaguje na działania użytkownika lub na określone zdarzenia, jakie dane przetwarza i jaki wynik zwraca.</p>
+  <div class="box example">
+    <span class="label">Przykład</span>
+    System wysyła studentowi e-mail z przypomnieniem 24 godziny przed terminem zwrotu sprzętu.
+  </div>
+  <p><b>Wymaganie pozafunkcjonalne</b> opisuje, jak dobrze system ma działać albo jakie ograniczenia musi spełniać. Dotyczy np. wydajności, dostępności, bezpieczeństwa, użyteczności lub zgodności z przepisami.</p>
+  <div class="box example">
+    <span class="label">Przykład</span>
+    Strona z listą sprzętu ładuje się w czasie nie dłuższym niż 2 sekundy.
+  </div>
+
+  <div class="box remember">
+    <span class="label">Zapamiętaj</span>
+    Jeśli nie wiesz, do której grupy należy wymaganie, zadaj sobie pytanie: czy użytkownik albo inny system może tę funkcję wywołać i zobaczyć jej wynik? Jeśli tak, wymaganie jest najprawdopodobniej funkcjonalne. Jeśli opisuje ono cechę całego systemu lub wielu funkcji naraz, jest pozafunkcjonalne.
+  </div>
 
   <div class="ex">
-    <span class="tag">ćwiczenie 2 · klasyfikacja</span>
-    <p>Wszystkie zdania dotyczą wypożyczalni. Przypisz każde do jednej z kategorii. Kilka jest podchwytliwych — przeczytaj uzasadnienia.</p>
+    <span class="tag">Ćwiczenie 2. Funkcjonalne czy pozafunkcjonalne?</span>
+    <p>Przypisz każde zdanie do właściwej grupy. Uwaga: kilka przykładów jest trudniejszych, dlatego czytaj wyjaśnienia.</p>
     <ol class="sort" data-opts="F:funkcjonalne|N:pozafunkcjonalne">
-      <li data-a="F" data-why="Konkretna operacja, którą wykonuje aktor, z konkretnym wynikiem.">System umożliwia studentowi zarezerwowanie wybranego egzemplarza sprzętu na wskazany termin.</li>
-      <li data-a="N" data-why="Wydajność. Dotyczy tego, jak szybko działa funkcja, a nie tego, co robi.">Strona z listą sprzętu ładuje się w czasie nie dłuższym niż 2 s dla 95% żądań.</li>
-      <li data-a="F" data-why="Zachowanie wyzwalane zdarzeniem (zbliżający się termin) z określonym wynikiem.">System wysyła e-mail z przypomnieniem 24 h przed upływem terminu zwrotu.</li>
-      <li data-a="N" data-why="Kompatybilność / przenośność. Dotyczy całego systemu, nie jednej funkcji.">System działa poprawnie w dwóch najnowszych wersjach przeglądarek Firefox, Chrome i Safari.</li>
-      <li data-a="F" data-why="Operacja pracownika plus reguła, która z niej wynika. Obie da się wywołać i sprawdzić.">Pracownik wypożyczalni może oznaczyć egzemplarz jako uszkodzony, co blokuje możliwość jego rezerwacji.</li>
-      <li data-a="N" data-why="Bezpieczeństwo. Użytkownik nie „wywołuje” haszowania — to cecha sposobu przechowywania danych.">Hasła użytkowników są przechowywane wyłącznie jako skróty kryptograficzne.</li>
-      <li data-a="F" data-why="Sama reguła („spóźnienie ponad 3 dni = 14 dni blokady”) należy do regulaminu wypożyczalni, nie do systemu. Ale wynikające z niej zachowanie systemu to już wymaganie funkcjonalne.">System blokuje możliwość rezerwacji na 14 dni studentowi, który zwrócił sprzęt z opóźnieniem większym niż 3 dni.</li>
-      <li data-a="N" data-why="Dostępność (accessibility) — przekrojowa cecha interfejsu.">Interfejs spełnia wymagania WCAG 2.1 na poziomie AA.</li>
-      <li data-a="F" data-why="Konkretny wynik (raport, format, zakres), który ktoś zamawia i odbiera.">System generuje miesięczne zestawienie wypożyczeń w formacie CSV.</li>
-      <li data-a="N" data-why="Niezawodność / dostępność usługi. Liczba, ale nie funkcja.">System jest dostępny przez 99,5% czasu w godzinach 8–20 w dni robocze.</li>
-      <li data-a="F" data-why="Podchwytliwe: brzmi jak „bezpieczeństwo”, ale to zachowanie systemu — zapis zdarzenia z określonymi danymi, który ktoś później przegląda. Pani Ewa potrzebuje tego, żeby wiedzieć, kto ostatni miał uszkodzony sprzęt.">Każda zmiana statusu egzemplarza jest zapisywana w historii zmian wraz z datą i autorem.</li>
-      <li data-a="N" data-why="Ograniczenie projektowe (constraint). Nie mówi nic o tym, co system robi.">System zostanie zaimplementowany w języku Python.</li>
+      <li data-a="F" data-why="Opisuje konkretną czynność użytkownika i jej wynik.">System umożliwia studentowi zarezerwowanie wybranego egzemplarza sprzętu na wskazany termin.</li>
+      <li data-a="N" data-why="Dotyczy wydajności, czyli tego, jak szybko działa funkcja, a nie tego, co robi.">Strona z listą sprzętu ładuje się w czasie nie dłuższym niż 2 s dla 95% żądań.</li>
+      <li data-a="F" data-why="Opisuje reakcję systemu na zdarzenie (zbliżający się termin zwrotu).">System wysyła e-mail z przypomnieniem 24 h przed upływem terminu zwrotu.</li>
+      <li data-a="N" data-why="Dotyczy zgodności z przeglądarkami, czyli cechy całego systemu.">System działa poprawnie w dwóch najnowszych wersjach przeglądarek Firefox, Chrome i Safari.</li>
+      <li data-a="F" data-why="Opisuje czynność pracownika i jej skutek w systemie.">Pracownik wypożyczalni może oznaczyć egzemplarz jako uszkodzony, co blokuje możliwość jego rezerwacji.</li>
+      <li data-a="N" data-why="Dotyczy bezpieczeństwa. Użytkownik nie wywołuje tej funkcji, to sposób przechowywania danych.">Hasła użytkowników są przechowywane wyłącznie jako skróty kryptograficzne.</li>
+      <li data-a="F" data-why="Sama zasada pochodzi z regulaminu wypożyczalni (reguła biznesowa), ale opisane zachowanie systemu jest wymaganiem funkcjonalnym.">System blokuje możliwość rezerwacji na 14 dni studentowi, który zwrócił sprzęt z opóźnieniem większym niż 3 dni.</li>
+      <li data-a="N" data-why="Dotyczy dostępności interfejsu dla osób z niepełnosprawnościami.">Interfejs spełnia wymagania WCAG 2.1 na poziomie AA.</li>
+      <li data-a="F" data-why="Opisuje konkretny wynik działania systemu: raport o określonym zakresie i formacie.">System generuje miesięczne zestawienie wypożyczeń w formacie CSV.</li>
+      <li data-a="N" data-why="Dotyczy niezawodności systemu.">System jest dostępny przez 99,5% czasu w godzinach 8–20 w dni robocze.</li>
+      <li data-a="F" data-why="To trudniejszy przypadek. Brzmi jak wymaganie dotyczące bezpieczeństwa, ale opisuje zachowanie systemu: zapisanie określonych danych, które ktoś później przegląda.">Każda zmiana statusu egzemplarza jest zapisywana w historii zmian wraz z datą i autorem.</li>
+      <li data-a="N" data-why="To ograniczenie dotyczące technologii. Nie opisuje, co robi system.">System zostanie zaimplementowany w języku Python.</li>
     </ol>
   </div>
 
-  <p>W tym temacie skupiamy się na wymaganiach funkcjonalnych, ale nie da się ich dobrze pisać bez umiejętności odsiewania pozafunkcjonalnych. Typowy błąd: wymieszanie obu w jednym zdaniu („System szybko wyszukuje sprzęt”). Taki zapis trzeba rozdzielić na dwa wymagania — wrócimy do tego w ćwiczeniu 4.</p>
+  <p>Częstym błędem jest łączenie obu rodzajów wymagań w jednym zdaniu, np. „System szybko wyszukuje sprzęt”. Takie zdanie należy rozdzielić na dwa wymagania. Wrócimy do tego w ćwiczeniu 4.</p>
 
-  <h2><span class="no">1.4</span>Anatomia wymagania</h2>
-  <p>Nie ma jednego obowiązującego formatu, ale większość szablonów (np. w duchu ISO/IEC/IEEE 29148) ma podobne elementy. Kliknij podkreślone fragmenty.</p>
+  <h2>1.4. Budowa wymagania funkcjonalnego</h2>
+  <p>Nie ma jednego obowiązkowego formatu zapisu wymagań, ale większość szablonów zawiera podobne elementy. Kliknij kolejne fragmenty wymagania, aby zobaczyć ich opis.</p>
 
   <div class="ex anat-box">
-    <span class="tag">kliknij części</span>
+    <span class="tag">Kliknij elementy wymagania</span>
     <p class="anat">
-      <button class="id" data-note="<b>Identyfikator.</b> Unikalny i stały — nie zmienia się, gdy wymaganie przesunie się w dokumencie. Dzięki niemu można powiązać wymaganie z historyjką, testem, fragmentem kodu (to jest <i>śledzalność</i>, ang. traceability).">FR-14</button>
-      <button data-note="<b>Aktor.</b> Kto inicjuje działanie albo na czyją rzecz system działa. „Użytkownik” to zwykle za mało — różne role mają różne uprawnienia.">Student</button>
-      <button data-note="<b>Czasownik modalny.</b> Umowa co do siły wymagania: <i>musi</i> = obowiązkowe, <i>powinien</i> = zalecane, <i>może</i> = opcjonalne. Ważne, żeby w całym dokumencie stosować te słowa konsekwentnie.">musi mieć możliwość</button>
-      <button data-note="<b>Działanie i jego parametry.</b> Jedna czynność, z liczbami tam, gdzie mają znaczenie. „Przedłużyć” — a nie „zarządzać rezerwacją”.">przedłużenia aktywnego wypożyczenia o&nbsp;maksymalnie 7&nbsp;dni,</button>
-      <button data-note="<b>Warunek.</b> Kiedy działanie jest dozwolone. Warunki to miejsce, gdzie kryją się reguły biznesowe — i gdzie najczęściej czegoś brakuje. Pytanie kontrolne: a co, jeśli warunek nie jest spełniony? (To powinno być osobne wymaganie albo element tego samego).">o&nbsp;ile egzemplarz nie jest zarezerwowany przez inną osobę w&nbsp;tym okresie.</button>
+      <button data-note="<b>Identyfikator.</b> Unikalny numer, który się nie zmienia. Pozwala powiązać wymaganie z historyjką, testem lub fragmentem kodu.">FR-14</button>
+      <button data-note="<b>Aktor.</b> Osoba lub system, który wykonuje działanie. Określenie „użytkownik” jest zwykle zbyt ogólne, bo różne grupy użytkowników mają różne uprawnienia.">Student</button>
+      <button data-note="<b>Czasownik modalny.</b> Określa, jak ważne jest wymaganie: <i>musi</i> oznacza wymaganie obowiązkowe, <i>powinien</i> zalecane, a <i>może</i> opcjonalne. W całym dokumencie należy stosować te słowa w ten sam sposób.">musi mieć możliwość</button>
+      <button data-note="<b>Działanie i jego parametry.</b> Jedna konkretna czynność. Jeśli to możliwe, podaj liczby.">przedłużenia aktywnego wypożyczenia o maksymalnie 7 dni,</button>
+      <button data-note="<b>Warunek.</b> Określa, kiedy działanie jest dozwolone. W warunkach często kryją się reguły biznesowe. Zawsze zapytaj też: co się dzieje, jeśli warunek nie jest spełniony?">o ile egzemplarz nie jest zarezerwowany przez inną osobę w tym okresie.</button>
     </p>
-    <p class="anat mono" style="font-size:.85rem;line-height:1.9">
-      <button data-note="<b>Priorytet.</b> Często w skali MoSCoW: <i>Must</i> (bez tego nie ma sensu wdrażać), <i>Should</i> (ważne, ale da się obejść), <i>Could</i> (miło by było), <i>Won’t</i> (świadomie nie w tej wersji). Pozycja Won’t jest cenna: zapisuje, czego <i>nie</i> robimy.">Priorytet: Must</button> ·
-      <button data-note="<b>Źródło.</b> Skąd wiemy, że to wymaganie istnieje: osoba, dokument, regulamin, spotkanie. Gdy pojawi się spór albo pytanie — wiadomo, do kogo pójść.">Źródło: wywiad z kierowniczką wypożyczalni, 12.03</button> ·
-      <button data-note="<b>Sposób weryfikacji.</b> Jak sprawdzimy, że wymaganie jest spełnione: test, inspekcja, demonstracja, analiza. Jeśli nie umiesz tego wpisać, wymaganie prawdopodobnie jest niejednoznaczne.">Weryfikacja: test akceptacyjny TA-14</button>
+    <p class="anat" style="font-size:.9rem">
+      <button data-note="<b>Priorytet.</b> Często określa się go metodą MoSCoW: <i>Must</i> (musi być), <i>Should</i> (powinno być), <i>Could</i> (może być), <i>Won’t</i> (nie w tej wersji).">Priorytet: Must</button>
+      <button data-note="<b>Źródło.</b> Skąd pochodzi wymaganie: od kogo, z jakiego dokumentu lub spotkania. Dzięki temu wiadomo, kogo zapytać w razie wątpliwości.">Źródło: wywiad z kierowniczką wypożyczalni, 12.03</button>
+      <button data-note="<b>Sposób weryfikacji.</b> Jak sprawdzimy, że wymaganie zostało spełnione, np. test, demonstracja, inspekcja. Jeśli nie potrafisz tego określić, wymaganie jest prawdopodobnie niejasne.">Weryfikacja: test akceptacyjny TA-14</button>
     </p>
-    <p class="note muted">Wybierz fragment wymagania.</p>
+    <p class="note muted">Kliknij wybrany fragment.</p>
   </div>
 
-  <h2><span class="no">1.5</span>Cechy dobrego wymagania</h2>
-  <p>Lista w różnych źródłach różni się szczegółami; ta odpowiada normie ISO/IEC/IEEE 29148 i podręcznikowi Wiegersa i Beatty.</p>
-  <dl class="terms">
-    <dt><span>01</span>Konieczne</dt><dd>Gdyby je usunąć, czegoś by w systemie zabrakło. Ma źródło w potrzebie interesariusza, a nie w pomyśle analityka.</dd>
-    <dt><span>02</span>Jednoznaczne</dt><dd>Dwie osoby czytające je niezależnie rozumieją to samo. Najczęstszy problem — patrz ćwiczenie 3.</dd>
-    <dt><span>03</span>Atomowe (pojedyncze)</dt><dd>Opisuje jedną rzecz. Spójnik „i” w treści to sygnał ostrzegawczy.</dd>
-    <dt><span>04</span>Kompletne</dt><dd>Zawiera wszystko, co potrzebne do realizacji — w tym warunki i przypadki brzegowe.</dd>
-    <dt><span>05</span>Spójne</dt><dd>Nie przeczy innym wymaganiom. FR-14 (przedłużenie o 7 dni) i FR-22 (maksymalny czas wypożyczenia 7 dni) nie mogą istnieć obok siebie bez wyjaśnienia.</dd>
-    <dt><span>06</span>Wykonalne</dt><dd>Da się je zrealizować w dostępnym czasie, budżecie i technologii.</dd>
-    <dt><span>07</span>Weryfikowalne</dt><dd>Istnieje skończona, obiektywna procedura sprawdzenia, czy system je spełnia.</dd>
-    <dt><span>08</span>Śledzalne</dt><dd>Ma identyfikator i źródło; można je powiązać w przód (z testem, kodem) i wstecz (z potrzebą).</dd>
-  </dl>
-  <p>Zwróć uwagę, że wymaganie mówi <i>co</i>, a nie <i>jak</i>. „System wyszukuje sprzęt przy użyciu Elasticsearch” to decyzja projektowa, nie wymaganie funkcjonalne — chyba że zamawiający naprawdę to narzuca, wtedy jest to ograniczenie (pozafunkcjonalne).</p>
+  <h2>1.5. Cechy dobrego wymagania</h2>
+  <p>Według normy ISO/IEC/IEEE 29148 oraz podręcznika Wiegersa i Beatty dobre wymaganie jest:</p>
+  <table>
+    <tr><th>Cecha</th><th>Co to znaczy</th></tr>
+    <tr><td><b>Konieczne</b></td><td>Wynika z rzeczywistej potrzeby interesariusza. Bez niego czegoś w systemie by zabrakło.</td></tr>
+    <tr><td><b>Jednoznaczne</b></td><td>Każda osoba, która je przeczyta, rozumie je tak samo.</td></tr>
+    <tr><td><b>Pojedyncze</b></td><td>Opisuje jedną rzecz. Spójnik „i” w treści wymagania może oznaczać, że są to dwa wymagania.</td></tr>
+    <tr><td><b>Kompletne</b></td><td>Zawiera wszystkie informacje potrzebne do realizacji, w tym warunki i wyjątki.</td></tr>
+    <tr><td><b>Spójne</b></td><td>Nie jest sprzeczne z innymi wymaganiami.</td></tr>
+    <tr><td><b>Wykonalne</b></td><td>Można je zrealizować w dostępnym czasie, budżecie i technologii.</td></tr>
+    <tr><td><b>Weryfikowalne</b></td><td>Można obiektywnie sprawdzić, czy system je spełnia.</td></tr>
+    <tr><td><b>Identyfikowalne</b></td><td>Ma identyfikator i źródło. Można je powiązać z testami i kodem.</td></tr>
+  </table>
+  <div class="box remember">
+    <span class="label">Zapamiętaj</span>
+    Wymaganie opisuje, <b>co</b> ma robić system, a nie <b>jak</b> ma być zbudowany. Zdanie „System wyszukuje sprzęt za pomocą Elasticsearch” to decyzja projektowa, a nie wymaganie funkcjonalne.
+  </div>
 
-  <h2><span class="no">1.6</span>Słowa, które psują wymagania</h2>
-  <p>Wróćmy do ostatniego zdania z opisu przypadku: <i>„Chcemy, żeby to było proste i nowoczesne”</i>. Każdy członek zespołu wyobrazi sobie coś innego, a odbiór systemu zamieni się w spór o gust. Takie słowa nie są zakazane w rozmowie — są sygnałem, że trzeba dopytać.</p>
+  <h2>1.6. Niejasne sformułowania</h2>
+  <p>Wróć do ostatniego zdania z opisu wypożyczalni: „Chcemy, żeby to było proste i nowoczesne”. Każda osoba w zespole może wyobrazić sobie coś innego. Słowa takie jak „proste”, „szybkie” czy „intuicyjne” mogą pojawić się w rozmowie z zamawiającym, ale są sygnałem, że trzeba dopytać o szczegóły. W zapisanym wymaganiu należy je zastąpić czymś, co da się sprawdzić.</p>
 
   <div class="ex detector">
-    <span class="tag">ćwiczenie 3 · detektor</span>
-    <p>Wpisz wymaganie (własne albo z przykładów) i zobacz, które fragmenty są podejrzane. Najedź na podświetlenie, żeby zobaczyć wskazówkę. To proste dopasowanie słów, nie ocena — traktuj je jak listę kontrolną.</p>
+    <span class="tag">Ćwiczenie 3. Wyszukaj niejasne słowa</span>
+    <p>Wpisz wymaganie (własne lub jeden z przykładów). Narzędzie zaznaczy słowa, które często powodują niejednoznaczność. Najedź kursorem na zaznaczenie, aby zobaczyć podpowiedź.</p>
     <p style="display:flex;flex-wrap:wrap;gap:.4rem">
-      <button type="button" data-sample="System powinien szybko i intuicyjnie wyszukiwać sprzęt.">przykład A</button>
-      <button type="button" data-sample="Pracownik wypożyczalni może zarządzać egzemplarzami (dodawanie, edycja, usuwanie itp.), jeśli to możliwe także z telefonu.">przykład B</button>
-      <button type="button" data-sample="Zazwyczaj system wysyła odpowiednie powiadomienia do wszystkich zainteresowanych osób.">przykład C</button>
-      <button type="button" data-sample="FR-09: System wysyła studentowi wiadomość e-mail 24 godziny przed terminem zwrotu każdego wypożyczonego egzemplarza.">przykład D</button>
+      <button type="button" data-sample="System powinien szybko i intuicyjnie wyszukiwać sprzęt.">Przykład A</button>
+      <button type="button" data-sample="Pracownik wypożyczalni może zarządzać egzemplarzami (dodawanie, edycja, usuwanie itp.), jeśli to możliwe także z telefonu.">Przykład B</button>
+      <button type="button" data-sample="Zazwyczaj system wysyła odpowiednie powiadomienia do wszystkich zainteresowanych osób.">Przykład C</button>
+      <button type="button" data-sample="FR-09: System wysyła studentowi wiadomość e-mail 24 godziny przed terminem zwrotu każdego wypożyczonego egzemplarza.">Przykład D</button>
     </p>
-    <textarea aria-label="Treść wymagania" placeholder="np. System musi…"></textarea>
+    <textarea aria-label="Treść wymagania" placeholder="Np. System musi…"></textarea>
     <div class="hl" aria-live="polite"></div>
     <ul class="hits"></ul>
+    <p class="muted" style="font-size:.88rem">Narzędzie wyszukuje tylko typowe słowa. Brak zaznaczeń nie oznacza, że wymaganie jest poprawne.</p>
   </div>
 
-  <h2><span class="no">1.7</span>Poprawianie wymagań</h2>
-  <p>Wykrycie problemu to połowa pracy. Druga połowa to rozmowa z zamawiającym i zapisanie wyniku. W ćwiczeniach poniżej wybierz najlepszą poprawkę. Możesz próbować kilka razy.</p>
+  <h2>1.7. Poprawianie wymagań</h2>
+  <p>W kolejnych ćwiczeniach wybierz najlepszą wersję poprawionego wymagania. Jeśli się pomylisz, możesz spróbować ponownie.</p>
 
   <div class="ex mc">
-    <span class="tag">ćwiczenie 4a</span>
-    <p>Oryginał: <b>„System powinien szybko wyszukiwać sprzęt.”</b></p>
+    <span class="tag">Ćwiczenie 4a</span>
+    <p>Wymaganie: <b>„System powinien szybko wyszukiwać sprzęt.”</b></p>
     <div class="choices">
-      <button data-why="Wzmocnienie modalności niczego nie naprawia — „bardzo szybko” wciąż nie ma liczby, a „sprawnie” dokłada drugie mętne słowo.">System musi bardzo szybko i sprawnie wyszukiwać sprzęt.</button>
-      <button data-ok data-why="Tak. Oryginał mieszał dwie rzeczy: zachowanie (co jest wyszukiwane i jak filtrowane) i jakość (czas). Rozdzielone stają się weryfikowalne: FR da się sprawdzić testem funkcjonalnym, NFR pomiarem.">FR-07: System wyświetla egzemplarze, których nazwa lub kategoria zawiera wpisaną frazę, z możliwością zawężenia do dostępnych we wskazanym terminie.<br>NFR-03: Wyniki wyszukiwania pojawiają się w czasie ≤ 1 s dla 95% zapytań przy 50 równoczesnych użytkownikach.</button>
-      <button data-why="To decyzja projektowa (jak), a nie wymaganie (co). Nadal nie wiadomo, po czym wyszukujemy ani co znaczy „szybko”.">System musi wyszukiwać sprzęt z wykorzystaniem silnika Elasticsearch.</button>
+      <button data-why="Słowa „bardzo szybko” nadal nie określają czasu, a „sprawnie” to kolejne niejasne słowo.">System musi bardzo szybko i sprawnie wyszukiwać sprzęt.</button>
+      <button data-ok data-why="Pierwotne zdanie łączyło dwa wymagania: funkcjonalne (co jest wyszukiwane) i pozafunkcjonalne (w jakim czasie). Po rozdzieleniu oba można sprawdzić.">FR-07: System wyświetla egzemplarze, których nazwa lub kategoria zawiera wpisaną frazę, z możliwością zawężenia wyników do sprzętu dostępnego we wskazanym terminie.<br>NFR-03: Wyniki wyszukiwania pojawiają się w czasie do 1 s dla 95% zapytań przy 50 jednoczesnych użytkownikach.</button>
+      <button data-why="To decyzja projektowa, a nie wymaganie. Nadal nie wiadomo, po czym wyszukujemy ani jak szybko ma to działać.">System musi wyszukiwać sprzęt z wykorzystaniem silnika Elasticsearch.</button>
     </div>
   </div>
 
   <div class="ex mc">
-    <span class="tag">ćwiczenie 4b</span>
-    <p>Oryginał: <b>„Użytkownik może zarządzać rezerwacjami.”</b></p>
+    <span class="tag">Ćwiczenie 4b</span>
+    <p>Wymaganie: <b>„Użytkownik może zarządzać rezerwacjami.”</b></p>
     <div class="choices">
-      <button data-why="„W pełni” i „intuicyjny” to dwa nowe problemy, a „zarządzać” został.">Użytkownik może w pełni zarządzać rezerwacjami w intuicyjny sposób.</button>
-      <button data-why="Lepiej niż oryginał, ale „itp.” otwiera listę, a „edycja” nic nie mówi (co można edytować? do kiedy?). Rola nadal jest ogólna.">Użytkownik może zarządzać rezerwacjami (dodawanie, edycja, usuwanie itp.).</button>
-      <button data-ok data-why="Tak. Konkretna rola, osobne czynności, każda z warunkiem. Uwaga: przy rozpisywaniu „zarządzania” zwykle wychodzą pytania do zamawiającego — tu np. „do kiedy można anulować?” — i to jest dokładnie ten pożytek.">FR-11: Student może anulować własną rezerwację do momentu odbioru sprzętu.<br>FR-12: Student może zmienić termin własnej rezerwacji, jeśli egzemplarz jest wolny w nowym terminie.<br>FR-13: Pracownik wypożyczalni może anulować dowolną rezerwację, podając powód widoczny dla studenta.</button>
+      <button data-why="Dodano niejasne słowa „w pełni” i „intuicyjny”, a ogólne słowo „zarządzać” pozostało.">Użytkownik może w pełni zarządzać rezerwacjami w intuicyjny sposób.</button>
+      <button data-why="To lepsza wersja, ale „itp.” oznacza otwartą listę, a „edycja” nie mówi, co można zmienić. Rola nadal jest zbyt ogólna.">Użytkownik może zarządzać rezerwacjami (dodawanie, edycja, usuwanie itp.).</button>
+      <button data-ok data-why="Każde wymaganie ma konkretną rolę, jedną czynność i warunek. Przy takim rozpisaniu pojawiają się też pytania do zamawiającego, np. do kiedy można anulować rezerwację.">FR-11: Student może anulować własną rezerwację do momentu odbioru sprzętu.<br>FR-12: Student może zmienić termin własnej rezerwacji, jeśli egzemplarz jest wolny w nowym terminie.<br>FR-13: Pracownik wypożyczalni może anulować dowolną rezerwację, podając powód widoczny dla studenta.</button>
     </div>
   </div>
 
   <div class="ex mc">
-    <span class="tag">ćwiczenie 4c</span>
-    <p>Co jest <i>głównym</i> problemem tego zapisu: <b>„System wysyła powiadomienia i generuje raporty.”</b></p>
+    <span class="tag">Ćwiczenie 4c</span>
+    <p>Jaki jest główny problem wymagania: <b>„System wysyła powiadomienia i generuje raporty.”</b>?</p>
     <div class="choices">
-      <button data-why="Prawda, ale to objaw. Nawet po doprecyzowaniu nadal byłyby to dwie zupełnie różne funkcje w jednym zdaniu.">Brakuje liczb, więc nie da się go zweryfikować.</button>
-      <button data-ok data-why="Tak. Dwie niezależne funkcje w jednym wymaganiu — nie da się ich osobno priorytetyzować, wycenić ani odhaczyć jako zrobionych. A każda z osobna jest niedookreślona: jakie powiadomienia, komu, kiedy; jakie raporty, dla kogo, za jaki okres.">Nie jest atomowe — to dwa wymagania w jednym, a każde jest niedookreślone.</button>
-      <button data-why="Nie — powiadomienia i raporty to funkcje, które ktoś wywołuje lub odbiera. Kategoria jest dobra, zapis zły.">To wymaganie pozafunkcjonalne zapisane jak funkcjonalne.</button>
+      <button data-why="To prawda, ale nie jest to główny problem. Nawet po dodaniu szczegółów zdanie nadal opisywałoby dwie różne funkcje.">Brakuje liczb, więc nie da się go sprawdzić.</button>
+      <button data-ok data-why="Zdanie zawiera dwie niezależne funkcje. Nie da się ich osobno ocenić, zaplanować ani sprawdzić. Dodatkowo obie są niedookreślone: nie wiadomo, jakie powiadomienia, do kogo i kiedy, ani jakie raporty i dla kogo.">Opisuje dwa wymagania naraz, a każde z nich jest niedokładne.</button>
+      <button data-why="Powiadomienia i raporty to funkcje systemu, więc są to wymagania funkcjonalne. Problem leży w sposobie zapisu.">To wymaganie pozafunkcjonalne zapisane jak funkcjonalne.</button>
     </div>
   </div>
 
-  <h2><span class="no">1.8</span>Skąd biorą się wymagania</h2>
-  <p>Wymagań się nie wymyśla, tylko <i>pozyskuje</i> (ang. elicitation): z wywiadów, obserwacji pracy (warto pół godziny posiedzieć przy pani Ewie i jej zeszycie), analizy istniejących dokumentów (regulamin wypożyczalni!), warsztatów z kilkoma grupami naraz, prototypów. Opis przypadku na stronie startowej to dopiero punkt wyjścia — zawiera potrzeby, ale niemal żadnych gotowych wymagań.</p>
-  <p>Dobra praktyka: każde wymaganie, którego źródłem jest „tak mi się wydaje”, oznacz jako założenie i dopisz pytanie do zamawiającego.</p>
-  <p>Pozyskiwanie to tylko pierwszy z kroków. Całość nazywa się <b>inżynierią wymagań</b> i dzieli na dwie części:</p>
+  <h2>1.8. Jak powstają wymagania</h2>
+  <p>Wymagania <b>pozyskuje się</b> od interesariuszy, np. podczas wywiadów, obserwacji pracy, analizy dokumentów (np. regulaminu wypożyczalni), warsztatów i pokazów prototypów. Opis od zamawiającego, który znasz ze strony startowej, to dopiero punkt wyjścia. Zawiera potrzeby, ale prawie żadnych gotowych wymagań.</p>
+  <p>Wszystkie działania związane z wymaganiami nazywamy <b>inżynierią wymagań</b>. Wiegers i Beatty dzielą ją na dwie części:</p>
   <table>
     <tr><th colspan="2">Opracowywanie wymagań</th></tr>
-    <tr><td><b>Pozyskiwanie</b></td><td>Kim są użytkownicy, jakie mają zadania i cele, w jakim środowisku pracują.</td></tr>
-    <tr><td><b>Analiza</b></td><td>Oddzielenie celów od wymagań, reguł biznesowych i podsuniętych rozwiązań; dekompozycja; szukanie luk i rzeczy spoza zakresu; priorytety.</td></tr>
-    <tr><td><b>Specyfikowanie</b></td><td>Zapisanie tego, co wiemy, w trwałej i uporządkowanej formie (np. SRS, backlog).</td></tr>
-    <tr><td><b>Walidacja</b></td><td>Przegląd z interesariuszami, testy akceptacyjne: czy to na pewno to, czego potrzebują?</td></tr>
+    <tr><td><b>Pozyskiwanie</b></td><td>Ustalenie, kim są użytkownicy, jakie mają zadania i cele.</td></tr>
+    <tr><td><b>Analiza</b></td><td>Oddzielenie celów od wymagań i reguł biznesowych, uszczegółowienie wymagań, wykrycie braków, ustalenie priorytetów.</td></tr>
+    <tr><td><b>Specyfikowanie</b></td><td>Zapisanie wymagań w uporządkowanej formie, np. w specyfikacji wymagań (SRS).</td></tr>
+    <tr><td><b>Walidacja</b></td><td>Sprawdzenie z interesariuszami, czy zapisane wymagania odpowiadają ich potrzebom.</td></tr>
     <tr><th colspan="2">Zarządzanie wymaganiami</th></tr>
-    <tr><td colspan="2">Uzgodniona wersja bazowa, ocena wpływu zmian, śledzenie statusu i powiązań z kodem i testami. Celem nie jest blokowanie zmian, tylko wprowadzanie ich świadomie.</td></tr>
+    <tr><td colspan="2">Ustalenie uzgodnionej wersji wymagań, ocena wpływu zmian, śledzenie statusu wymagań i ich powiązań z kodem i testami.</td></tr>
   </table>
-  <p>To nie jest proces jednorazowy. Wymagania doprecyzowuje się w kolejnych iteracjach, a idealnych nie uda się uzyskać nigdy — celem jest zrozumienie wystarczające do zbudowania <i>następnego</i> kawałka systemu przy akceptowalnym ryzyku.</p>
+  <p>Wymagania doprecyzowuje się stopniowo, w kolejnych iteracjach. Nie da się od razu przygotować idealnych wymagań. Celem jest takie zrozumienie potrzeb, które wystarczy do zbudowania kolejnej części systemu.</p>
 
   <div class="ex">
-    <span class="tag">ćwiczenie 5 · co poszło nie tak</span>
-    <p>Pięć scen z (wyobrażonego) projektu wypożyczalni. Każda ilustruje inne typowe ryzyko opisane przez Wiegersa i Beatty. Które?</p>
-    <ol class="sort" data-opts="Z:złocenie|P:pełzanie zakresu|I:przeoczony interesariusz|J:niejednoznaczność|U:słabe zaangażowanie użytkowników">
-      <li data-a="Z" data-why="Złocenie (gold plating): funkcja dodana, bo „na pewno się spodoba”, bez uzgodnienia i bez celu biznesowego. Kosztuje czas, którego zabraknie na rzeczy zamówione.">Programista dodał ranking „najaktywniejszych wypożyczających” z odznakami, bo uznał, że studentom się spodoba. Nikt o to nie prosił.</li>
-      <li data-a="I" data-why="Dział IT (albo kwestura, albo inspektor ochrony danych) to interesariusze, których łatwo przeoczyć, bo nie są „użytkownikami”. Ich wymagania i tak się pojawią — tylko później i drożej.">Tydzień przed wdrożeniem kwestura informuje, że sprzęt o wartości powyżej 5000 zł może być wydany wyłącznie po podpisaniu protokołu. Nikt z kwestury nie był pytany.</li>
-      <li data-a="P" data-why="Pełzanie zakresu (scope creep): każda zmiana z osobna wygląda niewinnie, ale żadna nie przechodzi przez pytanie o zakres i koszt. Termin i budżet się nie zmieniają, więc coś musi pęknąć.">Co tydzień dziekanat dopisuje „drobiazg”: eksport do Excela, potem do USOS, potem statystyki dla rektora. Termin oddania się nie zmienia.</li>
-      <li data-a="J" data-why="Niejednoznaczność: obie strony przeczytały to samo słowo i każda zrozumiała coś sensownego — dlatego nikt nie zauważył problemu. Pomogłby scenariusz z konkretną datą (temat 2).">Zespół rozumiał „przedłużenie” jako kolejne 14 dni, a pani Ewa — jako przesunięcie zwrotu do końca bieżącego tygodnia. Wyszło na pierwszym pokazie.</li>
-      <li data-a="U" data-why="Rozmowa z przełożonym zamiast z osobą, która wykonuje pracę, to klasyczny „zastępczy użytkownik”. Wymagania będą wyglądać porządnie i nie będą pasować do rzeczywistości.">Pani Ewa nie miała czasu na spotkania, więc wymagania ustalono z jej przełożonym, który nigdy nie wydawał sprzętu.</li>
+    <span class="tag">Ćwiczenie 5. Co poszło nie tak?</span>
+    <p>Poniżej znajdziesz pięć sytuacji z projektu wypożyczalni. Każda z nich ilustruje jedno z typowych zagrożeń opisanych przez Wiegersa i Beatty. Wskaż, które.</p>
+    <ol class="sort" data-opts="Z:złocenie|P:rozrastanie się zakresu|I:pominięty interesariusz|J:niejednoznaczność|U:mały udział użytkowników">
+      <li data-a="Z" data-why="To złocenie (ang. gold plating): dodanie funkcji, o którą nikt nie prosił, bo „na pewno się spodoba”. Zabiera czas potrzebny na zamówione funkcje.">Programista dodał ranking „najaktywniejszych wypożyczających”, bo uznał, że studentom się spodoba. Nikt o to nie prosił.</li>
+      <li data-a="I" data-why="Kwestura nie korzysta z systemu, ale ma wobec niego wymagania. Takich interesariuszy łatwo pominąć, a ich wymagania i tak się pojawią, tylko później.">Tydzień przed wdrożeniem kwestura informuje, że sprzęt o wartości powyżej 5000 zł może być wydany tylko po podpisaniu protokołu. Nikt wcześniej nie rozmawiał z kwesturą.</li>
+      <li data-a="P" data-why="To rozrastanie się zakresu (ang. scope creep). Każda zmiana osobno wydaje się niewielka, ale razem zwiększają zakres pracy, a termin się nie zmienia.">Co tydzień dziekanat prosi o kolejną „drobną” funkcję: eksport do Excela, potem do USOS, potem statystyki dla rektora. Termin oddania się nie zmienia.</li>
+      <li data-a="J" data-why="Obie strony inaczej zrozumiały to samo słowo i nikt tego nie zauważył. Pomógłby przykład z konkretnymi datami (zob. temat 2, kryteria akceptacji).">Zespół rozumiał „przedłużenie” jako kolejne 14 dni, a pani Ewa jako przesunięcie zwrotu do końca tygodnia. Okazało się to dopiero na pierwszym pokazie.</li>
+      <li data-a="U" data-why="Wymagania ustalono z osobą, która nie wykonuje tej pracy. Mogą wyglądać poprawnie, ale nie odpowiadać rzeczywistym potrzebom.">Pani Ewa nie miała czasu na spotkania, więc wymagania ustalono z jej przełożonym, który nigdy nie wydawał sprzętu.</li>
     </ol>
   </div>
 
-  <h2><span class="no">1.9</span>Ćwiczenie samodzielne 1</h2>
+  <h2>1.9. Podsumowanie i ćwiczenie samodzielne</h2>
+  <div class="box">
+    <span class="label">Podsumowanie</span>
+    <ul>
+      <li>Błędy w wymaganiach są tym droższe, im później zostaną wykryte.</li>
+      <li>Wyróżniamy wymagania biznesowe, wymagania użytkownika i wymagania funkcjonalne. Obok nich istnieją wymagania pozafunkcjonalne, reguły biznesowe i wymagania projektu.</li>
+      <li>Wymaganie funkcjonalne opisuje, co robi system. Wymaganie pozafunkcjonalne opisuje, jak dobrze to robi lub jakie ograniczenia spełnia.</li>
+      <li>Dobre wymaganie ma identyfikator, aktora, jedno działanie, warunki, priorytet, źródło i sposób weryfikacji.</li>
+      <li>Słowa takie jak „szybko”, „łatwo”, „itp.” czy „zarządzać” sprawiają, że wymaganie jest niejednoznaczne.</li>
+    </ul>
+  </div>
+
   <div class="ex">
-    <span class="tag">do samodzielnego wykonania</span>
-    <p>Nie oddajesz tego ćwiczenia — to trening. Zapisz wyniki u siebie, bo ćwiczenie samodzielne 2 z nich korzysta. Na podstawie opisu wypożyczalni:</p>
+    <span class="tag">Ćwiczenie samodzielne 1</span>
+    <p>To ćwiczenie wykonujesz samodzielnie i nie musisz go nigdzie oddawać. Zachowaj jednak swoje odpowiedzi, ponieważ wykorzystasz je w temacie 2.</p>
+    <p>Na podstawie opisu wypożyczalni:</p>
     <ol>
-      <li>Zapisz <b>10 wymagań funkcjonalnych</b> według szablonu poniżej. Uwzględnij co najmniej trzy różne role i co najmniej trzy wymagania z warunkiem (regułą biznesową).</li>
-      <li>Zapisz <b>3 wymagania pozafunkcjonalne</b>, w tym jedno, które przekłada „ma działać na telefonie” na coś weryfikowalnego.</li>
-      <li>Przepuść swoje wymagania przez detektor z ćwiczenia 3. Przy każdym, które zostawiasz z podświetlonym słowem, dopisz jedno zdanie, dlaczego to słowo jest tu w porządku.</li>
-      <li>Wypisz <b>5 pytań</b>, które zadał(a)byś pani Ewie albo dziekanatowi, bo opis przypadku na nie nie odpowiada.</li>
+      <li>Zapisz <b>10 wymagań funkcjonalnych</b> według poniższego szablonu. Uwzględnij co najmniej trzy różne role i co najmniej trzy wymagania z warunkiem.</li>
+      <li>Zapisz <b>3 wymagania pozafunkcjonalne</b>. Jedno z nich powinno doprecyzować zdanie „ma działać też na telefonie”.</li>
+      <li>Sprawdź swoje wymagania w narzędziu z ćwiczenia 3 i popraw niejasne sformułowania.</li>
+      <li>Zapisz <b>5 pytań</b>, które zadał(a)byś pani Ewie lub dziekanatowi, ponieważ opis nie daje na nie odpowiedzi.</li>
     </ol>
     <pre id="tpl-fr">ID:          FR-__
 Treść:       [Aktor] musi / powinien / może [działanie] [warunek].
 Priorytet:   Must / Should / Could / Won't
 Źródło:      [kto / jaki dokument]
 Weryfikacja: [jak sprawdzimy]
-Uwagi:       [założenia, pytania otwarte]</pre>
-    <button type="button" data-copy="#tpl-fr">kopiuj szablon</button>
+Uwagi:       [założenia, pytania]</pre>
+    <button type="button" data-copy="#tpl-fr">Kopiuj szablon</button>
   </div>
 
-  <h3>Źródła i dalsza lektura</h3>
+  <h2>Literatura</h2>
   <ul class="sources">
-    <li>K. Wiegers, J. Beatty, <i>Specyfikacja oprogramowania. Inżynieria wymagań</i>, Helion 2014 (oryg. <i>Software Requirements</i>, wyd. 3, Microsoft Press 2013) — rozdz. 1 (podstawy, poziomy wymagań, ryzyka) oraz 10–11 (dokumentowanie, pisanie wymagań).</li>
-    <li>F. Brooks, <i>No Silver Bullet — Essence and Accidents of Software Engineering</i>, „Computer” 20(4), 1987.</li>
-    <li>ISO/IEC/IEEE 29148:2018, <i>Systems and software engineering — Life cycle processes — Requirements engineering</i>.</li>
-    <li>S. Robertson, J. Robertson, <i>Mastering the Requirements Process</i>, wyd. 3, Addison-Wesley 2012 — m.in. „fit criterion”, czyli jak uczynić wymaganie mierzalnym.</li>
+    <li>K. Wiegers, J. Beatty, <i>Specyfikacja oprogramowania. Inżynieria wymagań</i>, Helion 2014 (oryg. <i>Software Requirements</i>, wyd. 3, Microsoft Press 2013), rozdz. 1, 10 i 11.</li>
+    <li>ISO/IEC/IEEE 29148:2018, <i>Systems and software engineering. Life cycle processes. Requirements engineering</i>.</li>
+    <li>S. Robertson, J. Robertson, <i>Mastering the Requirements Process</i>, wyd. 3, Addison-Wesley 2012.</li>
+    <li>F. Brooks, <i>No Silver Bullet. Essence and Accidents of Software Engineering</i>, „Computer” 20(4), 1987.</li>
   </ul>
 
-  <div class="next"><a href="index.html">← start</a><a href="historyjki.html">temat 2: historyjki →</a></div>
+  <div class="next"><a href="index.html">← Start</a><a href="historyjki.html">Temat 2. Historyjki użytkownika →</a></div>
 </main>
+</div>
 <script src="main.js"></script>
 </body>
 </html>

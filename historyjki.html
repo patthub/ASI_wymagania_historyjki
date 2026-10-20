@@ -3,32 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Historyjki użytkownika — ASI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<title>Temat 2. Historyjki użytkownika</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <b>ASI</b><span>Architektura systemów informacyjnych · zajęcia asynchroniczne</span>
-  <nav><a href="index.html">0 start</a><a href="wymagania.html">1 wymagania</a><a href="historyjki.html" aria-current="page">2 historyjki</a></nav>
-</header>
+<header class="top"><div class="inner">
+  <div class="course">Architektura systemów informacyjnych<small>Zajęcia asynchroniczne</small></div>
+  <nav><a href="index.html">Start</a><a href="wymagania.html">Temat 1. Wymagania funkcjonalne</a><a href="historyjki.html" aria-current="page">Temat 2. Historyjki użytkownika</a></nav>
+</div></header>
+<div class="wrap">
+<aside class="toc"><b>W tym temacie</b><ol></ol></aside>
 <main>
-  <p class="meta">temat 2</p>
-  <h1>Historyjki użytkownika</h1>
-  <p class="lead">Historyjka nie jest krótszą wersją wymagania. To obietnica rozmowy, zapisana na tyle krótko, żeby zmieściła się na karteczce.</p>
+  <p class="crumbs">Start › Temat 2</p>
+  <h1>Temat 2. Historyjki użytkownika</h1>
+  <div class="info"><span>Czas: ok. 75 minut</span><span>Ćwiczenia: 4 + ćwiczenie samodzielne</span></div>
 
-  <h2><span class="no">2.1</span>Karta, rozmowa, potwierdzenie</h2>
-  <p>Historyjki użytkownika (ang. <i>user stories</i>) wyrosły z metod zwinnych, przede wszystkim z Extreme Programming. Ron Jeffries opisał je w 2001 roku przez trzy „C”:</p>
-  <dl class="terms">
-    <dt><span>Card</span>Karta</dt><dd>Kilka słów na fizycznej karteczce. Za mało, żeby z tego programować — i celowo. Karta przypomina, <i>o czym</i> trzeba porozmawiać.</dd>
-    <dt><span>Conversation</span>Rozmowa</dt><dd>Szczegóły ustala się w rozmowie zespołu z osobą, która zna potrzebę, możliwie blisko momentu realizacji.</dd>
-    <dt><span>Confirmation</span>Potwierdzenie</dt><dd>Wynik rozmowy zapisuje się jako kryteria akceptacji: warunki, po spełnieniu których historyjkę uznajemy za zrobioną (§2.4).</dd>
-  </dl>
-  <p>Najczęstszy błąd w praktyce: traktowanie samej karty jak specyfikacji. Wtedy historyjka ma wszystkie wady mętnego wymagania z tematu 1, a nie ma żadnej z zalet rozmowy.</p>
+  <div class="box">
+    <span class="label">Cele tematu</span>
+    <p>Po zakończeniu tego tematu będziesz umieć:</p>
+    <ul>
+      <li>zapisać historyjkę użytkownika według szablonu „Jako… chcę… aby…”,</li>
+      <li>ocenić historyjkę za pomocą kryteriów INVEST,</li>
+      <li>napisać kryteria akceptacji w formacie „Zakładając, że / Gdy / Wtedy”,</li>
+      <li>podzielić zbyt dużą historyjkę na mniejsze,</li>
+      <li>wyjaśnić, czym historyjka różni się od wymagania funkcjonalnego.</li>
+    </ul>
+  </div>
 
-  <h2><span class="no">2.2</span>Szablon</h2>
-  <p>Najpopularniejszy format pochodzi z zespołu firmy Connextra (ok. 2001):</p>
+  <h2>2.1. Czym jest historyjka użytkownika?</h2>
+  <p>Historyjka użytkownika (ang. <i>user story</i>) to krótki opis potrzeby użytkownika, zapisany z jego perspektywy. Historyjki są stosowane przede wszystkim w metodach zwinnych, np. w Scrumie. W temacie 1 poznałeś(-aś) poziomy wymagań. Historyjka jest jednym ze sposobów zapisu <b>wymagania użytkownika</b>.</p>
+  <p>Ron Jeffries (2001) opisał historyjkę za pomocą trzech elementów, nazywanych „3C”:</p>
+  <table>
+    <tr><th>Element</th><th>Opis</th></tr>
+    <tr><td><b>Karta</b> (ang. <i>Card</i>)</td><td>Krótki opis historyjki, który mieści się na małej karteczce. Nie zawiera wszystkich szczegółów.</td></tr>
+    <tr><td><b>Rozmowa</b> (ang. <i>Conversation</i>)</td><td>Szczegóły ustala się w rozmowie zespołu z osobą, która zna potrzebę użytkownika.</td></tr>
+    <tr><td><b>Potwierdzenie</b> (ang. <i>Confirmation</i>)</td><td>Ustalenia z rozmowy zapisuje się jako kryteria akceptacji. Pozwalają one sprawdzić, czy historyjka została zrealizowana (punkt 2.4).</td></tr>
+  </table>
+  <div class="box remember">
+    <span class="label">Zapamiętaj</span>
+    Sama karta nie wystarczy do zbudowania funkcji. Historyjka staje się kompletna dopiero po rozmowie i zapisaniu kryteriów akceptacji.
+  </div>
+
+  <h2>2.2. Szablon historyjki</h2>
+  <p>Najczęściej stosowany szablon wygląda następująco:</p>
+  <div class="box example">
+    <span class="label">Szablon</span>
+    <b>Jako</b> &lt;rola&gt; <b>chcę</b> &lt;cel&gt;, <b>aby</b> &lt;korzyść&gt;.
+  </div>
+  <p>Oto dwa przykłady dla systemu wypożyczalni:</p>
   <div class="cards">
     <div class="card">
       <div class="cardhead"><span>#07</span><span>3 pkt</span></div>
@@ -36,20 +58,21 @@
     </div>
     <div class="card">
       <div class="cardhead"><span>#12</span><span>5 pkt</span></div>
-      <p><em>Jako</em> prowadząca zajęcia terenowe<br><em>chcę</em> zarezerwować kilka dyktafonów naraz na ten sam termin,<br><em>aby</em> cała grupa mogła nagrywać wywiady jednocześnie.</p>
+      <p><em>Jako</em> prowadząca zajęcia terenowe<br><em>chcę</em> zarezerwować kilka dyktafonów naraz na ten sam termin,<br><em>aby</em> cała grupa mogła jednocześnie nagrywać wywiady.</p>
     </div>
   </div>
+  <p>Każda część szablonu odpowiada na inne pytanie:</p>
   <table>
-    <tr><th>Część</th><th>Odpowiada na pytanie</th><th>Typowy błąd</th></tr>
-    <tr><td><b>Jako</b> &lt;rola&gt;</td><td>Kto ma tę potrzebę?</td><td>„Jako użytkownik” — nie wiadomo, kogo zapytać o szczegóły.</td></tr>
-    <tr><td><b>chcę</b> &lt;cel&gt;</td><td>Co chce osiągnąć?</td><td>Opis rozwiązania: „chcę przycisk”, „chcę tabelę”.</td></tr>
-    <tr><td><b>aby</b> &lt;korzyść&gt;</td><td>Po co? Jaki problem znika?</td><td>Pominięcie albo powtórzenie celu innymi słowami.</td></tr>
+    <tr><th>Część</th><th>Pytanie</th><th>Częsty błąd</th></tr>
+    <tr><td><b>Jako</b> &lt;rola&gt;</td><td>Kto ma tę potrzebę?</td><td>Zbyt ogólna rola, np. „Jako użytkownik”.</td></tr>
+    <tr><td><b>chcę</b> &lt;cel&gt;</td><td>Co chce osiągnąć?</td><td>Opis rozwiązania technicznego, np. „chcę przycisk”.</td></tr>
+    <tr><td><b>aby</b> &lt;korzyść&gt;</td><td>Po co mu to?</td><td>Pominięcie tej części lub powtórzenie celu innymi słowami.</td></tr>
   </table>
-  <p>Część „aby” jest najczęściej pomijana i najbardziej wartościowa. Znając korzyść, zespół może zaproponować prostsze rozwiązanie niż to, które przyszło do głowy autorowi historyjki.</p>
+  <p>Część „aby” jest często pomijana, a jest bardzo ważna. Gdy zespół zna korzyść, może zaproponować prostsze rozwiązanie niż to, o które poproszono.</p>
 
   <div class="ex composer">
-    <span class="tag">ćwiczenie 6 · napisz historyjkę</span>
-    <p>Napisz historyjkę dla wypożyczalni. Karta aktualizuje się na bieżąco, a pod nią pojawiają się uwagi.</p>
+    <span class="tag">Ćwiczenie 6. Napisz historyjkę</span>
+    <p>Napisz historyjkę dla systemu wypożyczalni. Karta poniżej będzie się uzupełniać w trakcie pisania, a pod nią pojawią się wskazówki.</p>
     <label for="c-role">Jako</label>
     <input type="text" id="c-role" placeholder="np. pracownik wypożyczalni" autocomplete="off">
     <label for="c-want">chcę</label>
@@ -57,56 +80,58 @@
     <label for="c-why">aby</label>
     <input type="text" id="c-why" placeholder="np. wiedzieć, kogo zapytać o uszkodzenie" autocomplete="off">
     <div class="card">
-      <div class="cardhead"><span>#??</span><span>? pkt</span></div>
+      <div class="cardhead"><span>Twoja historyjka</span></div>
       <p></p>
     </div>
     <ul class="warn" aria-live="polite"></ul>
-    <button type="button" data-copy-story>kopiuj tekst</button>
+    <button type="button" data-copy-story>Kopiuj tekst</button>
   </div>
 
-  <h2><span class="no">2.3</span>INVEST</h2>
-  <p>Bill Wake (2003) zaproponował sześć cech, po których poznać dobrą historyjkę. To nie jest formalna norma, tylko lista kontrolna — ale bardzo skuteczna.</p>
-  <dl class="terms">
-    <dt><span>I</span>Independent — niezależna</dt><dd>Da się ją zrealizować i dostarczyć bez czekania na inne historyjki. Pełna niezależność bywa niemożliwa, ale silne powiązania utrudniają planowanie.</dd>
-    <dt><span>N</span>Negotiable — negocjowalna</dt><dd>Opisuje potrzebę, nie gotowe rozwiązanie. Zostawia miejsce na rozmowę o tym, <i>jak</i>.</dd>
-    <dt><span>V</span>Valuable — wartościowa</dt><dd>Daje coś odczuwalnego użytkownikowi lub zamawiającemu. „Utworzyć tabelę w bazie” to zadanie techniczne, nie historyjka.</dd>
-    <dt><span>E</span>Estimable — szacowalna</dt><dd>Zespół potrafi z grubsza ocenić jej pracochłonność. Jeśli nie potrafi, zwykle brakuje wiedzy — wtedy najpierw robi się krótkie rozpoznanie (ang. <i>spike</i>).</dd>
-    <dt><span>S</span>Small — mała</dt><dd>Mieści się w jednej iteracji, najlepiej z zapasem. Za duże historyjki nazywa się <i>epikami</i> i dzieli (§2.5).</dd>
-    <dt><span>T</span>Testable — testowalna</dt><dd>Da się napisać kryteria akceptacji. Jeśli nie wiadomo, jak sprawdzić, że jest zrobiona, nie jest gotowa do realizacji.</dd>
-  </dl>
+  <h2>2.3. Kryteria INVEST</h2>
+  <p>Bill Wake (2003) zaproponował sześć kryteriów dobrej historyjki. Ich pierwsze litery tworzą skrót INVEST.</p>
+  <table>
+    <tr><th>Litera</th><th>Kryterium</th><th>Opis</th></tr>
+    <tr><td><b>I</b></td><td>Independent (niezależna)</td><td>Można ją zrealizować bez czekania na inne historyjki.</td></tr>
+    <tr><td><b>N</b></td><td>Negotiable (negocjowalna)</td><td>Opisuje potrzebę, a nie gotowe rozwiązanie. Szczegóły można ustalić w rozmowie.</td></tr>
+    <tr><td><b>V</b></td><td>Valuable (wartościowa)</td><td>Daje wartość użytkownikowi lub zamawiającemu.</td></tr>
+    <tr><td><b>E</b></td><td>Estimable (możliwa do oszacowania)</td><td>Zespół potrafi ocenić, ile pracy wymaga.</td></tr>
+    <tr><td><b>S</b></td><td>Small (mała)</td><td>Można ją zrealizować w jednej iteracji (np. w jednym sprincie).</td></tr>
+    <tr><td><b>T</b></td><td>Testable (testowalna)</td><td>Można sprawdzić, czy została zrealizowana.</td></tr>
+  </table>
+  <p>Historyjki, które są zbyt duże, nazywamy <b>epikami</b>. Takie historyjki należy podzielić (punkt 2.5). Jeśli zespół nie potrafi oszacować historyjki, bo brakuje mu wiedzy, może najpierw przeprowadzić krótkie rozpoznanie (ang. <i>spike</i>).</p>
 
   <div class="ex">
-    <span class="tag">ćwiczenie 7 · co tu nie gra</span>
-    <p>Każda historyjka najmocniej łamie <i>jedną</i> z cech INVEST. Którą?</p>
+    <span class="tag">Ćwiczenie 7. Które kryterium nie jest spełnione?</span>
+    <p>Każda z poniższych historyjek nie spełnia przede wszystkim jednego kryterium INVEST. Wskaż, którego.</p>
     <ol class="sort" data-opts="I|N|V|E|S|T">
-      <li data-a="T" data-why="„Wygodny” to wrażenie, którego nie da się sprawdzić. Brakuje też konkretnego celu — ale nawet z nim nie wiadomo, kiedy historyjka byłaby „zrobiona”.">Jako student chcę, aby system był wygodny, aby chętniej z niego korzystać.</li>
-      <li data-a="V" data-why="Rola „programista” i cel techniczny — to zadanie, nie historyjka. Żaden użytkownik nie zauważy, że tabela powstała. Tabela pojawi się przy okazji realizacji historyjki, która jej potrzebuje.">Jako programista chcę utworzyć tabelę <code>reservations</code> w bazie danych, aby zapisywać rezerwacje.</li>
-      <li data-a="S" data-why="To epik — cały system w jednym zdaniu. Trzeba go podzielić; patrz §2.5.">Jako pracownik wypożyczalni chcę obsługiwać wypożyczenia, zwroty, naprawy, inwentaryzację i raporty, aby mieć porządek w sprzęcie.</li>
-      <li data-a="I" data-why="Historyjka jest przywiązana do dwóch innych i nie da się jej dostarczyć osobno. Często pomaga przesunięcie granic: np. połączyć ją z #08 albo dopisać do #08 jako kryterium akceptacji.">Jako student chcę widzieć na potwierdzeniu rezerwacji termin zwrotu, aby go nie przegapić. <small>(Do realizacji wyłącznie w tej samej iteracji co #08 „formularz rezerwacji” i #09 „kalendarz dostępności”.)</small></li>
-      <li data-a="E" data-why="Cel jest zrozumiały, ale nikt w zespole nie wie, skąd wziąć dane, jak to zrobić i czy w ogóle się da. Zamiast zgadywać — krótki spike: „sprawdzić, jakie dane o awariach mamy i co z nich wynika”.">Jako kierowniczka wypożyczalni chcę, aby system przewidywał awarie sprzętu, aby wymieniać go zawczasu.</li>
-      <li data-a="N" data-why="Kolor, położenie przycisku i adres API to decyzje projektowe, wpisane w historyjkę jak w kamień. Nie ma też części „aby”, więc nie da się zaproponować niczego lepszego.">Jako student chcę kliknąć niebieski przycisk „Rezerwuj” w prawym górnym rogu, który wysyła żądanie POST na <code>/api/v2/reservations</code>.</li>
+      <li data-a="T" data-why="Słowo „wygodny” jest subiektywne i nie da się sprawdzić, czy historyjka została zrealizowana.">Jako student chcę, aby system był wygodny, aby chętniej z niego korzystać.</li>
+      <li data-a="V" data-why="To zadanie techniczne, a nie historyjka. Użytkownik nie odczuje bezpośrednio, że tabela została utworzona.">Jako programista chcę utworzyć tabelę <code>reservations</code> w bazie danych, aby zapisywać rezerwacje.</li>
+      <li data-a="S" data-why="To epik, który obejmuje prawie cały system. Należy go podzielić na mniejsze historyjki.">Jako pracownik wypożyczalni chcę obsługiwać wypożyczenia, zwroty, naprawy, inwentaryzację i raporty, aby mieć porządek w sprzęcie.</li>
+      <li data-a="I" data-why="Historyjkę można zrealizować tylko razem z dwiema innymi. Można np. połączyć ją z historyjką #08.">Jako student chcę widzieć na potwierdzeniu rezerwacji termin zwrotu, aby go nie przegapić. <small>(Do realizacji tylko razem z historyjkami #08 „formularz rezerwacji” i #09 „kalendarz dostępności”.)</small></li>
+      <li data-a="E" data-why="Cel jest zrozumiały, ale zespół nie wie, skąd wziąć dane ani jak to zrobić. Najpierw potrzebne jest rozpoznanie (spike).">Jako kierowniczka wypożyczalni chcę, aby system przewidywał awarie sprzętu, aby wymieniać go z wyprzedzeniem.</li>
+      <li data-a="N" data-why="Historyjka narzuca szczegóły rozwiązania (kolor, położenie przycisku, adres API) i nie ma części „aby”. Nie zostawia miejsca na rozmowę.">Jako student chcę kliknąć niebieski przycisk „Rezerwuj” w prawym górnym rogu, który wysyła żądanie POST na <code>/api/v2/reservations</code>.</li>
     </ol>
   </div>
 
-  <h2><span class="no">2.4</span>Kryteria akceptacji</h2>
-  <p>Kryteria akceptacji to trzecie „C”: zapis tego, co ustalono w rozmowie. Popularny format pochodzi z podejścia BDD (Behaviour-Driven Development) i języka Gherkin, który ma też polskie słowa kluczowe:</p>
+  <h2>2.4. Kryteria akceptacji</h2>
+  <p>Kryteria akceptacji to warunki, które musi spełnić historyjka, aby uznać ją za zrealizowaną. Często zapisuje się je w formacie pochodzącym z podejścia BDD (ang. <i>Behaviour-Driven Development</i>):</p>
   <table>
-    <tr><th>Gherkin</th><th>Po polsku</th><th>Co zawiera</th></tr>
-    <tr><td><code>Given</code></td><td><b>Zakładając, że</b></td><td>stan początkowy, kontekst</td></tr>
-    <tr><td><code>When</code></td><td><b>Gdy</b></td><td>jedno działanie lub zdarzenie</td></tr>
-    <tr><td><code>Then</code></td><td><b>Wtedy</b></td><td>oczekiwany, obserwowalny wynik</td></tr>
-    <tr><td><code>And</code> / <code>But</code></td><td><b>Oraz</b> / <b>Ale</b></td><td>kolejny element tej samej części</td></tr>
+    <tr><th>Słowo kluczowe</th><th>Po angielsku</th><th>Co opisuje</th></tr>
+    <tr><td><b>Zakładając, że</b></td><td>Given</td><td>sytuację początkową</td></tr>
+    <tr><td><b>Gdy</b></td><td>When</td><td>działanie użytkownika lub zdarzenie</td></tr>
+    <tr><td><b>Wtedy</b></td><td>Then</td><td>oczekiwany wynik</td></tr>
+    <tr><td><b>Oraz</b> / <b>Ale</b></td><td>And / But</td><td>dodatkowy element w tej samej części</td></tr>
   </table>
-  <p>Jedna historyjka ma zwykle kilka scenariuszy: ścieżkę główną i wyjątki. Dobrze, gdy w scenariuszu występują konkretne dane — „Anna”, „aparat A-17”, „10 listopada” — a nie „użytkownik”, „sprzęt” i „data”. Konkret od razu ujawnia luki.</p>
+  <p>Jedna historyjka ma zwykle kilka scenariuszy: scenariusz podstawowy oraz scenariusze dla sytuacji wyjątkowych. W scenariuszach warto używać konkretnych danych, np. „Anna”, „aparat A-17”, „10 listopada”. Dzięki temu łatwiej zauważyć braki.</p>
 
-  <div class="card" style="max-width:none">
+  <div class="card">
     <div class="cardhead"><span>#14</span><span>3 pkt</span></div>
     <p><em>Jako</em> student<br><em>chcę</em> przedłużyć wypożyczenie bez przychodzenia do wypożyczalni,<br><em>aby</em> dokończyć projekt bez ryzyka kary za spóźnienie.</p>
   </div>
 
   <div class="ex order">
-    <span class="tag">ćwiczenie 8 · ułóż scenariusz</span>
-    <p>Klikaj linie w poprawnej kolejności, aby zbudować scenariusz ścieżki głównej dla historyjki #14.</p>
+    <span class="tag">Ćwiczenie 8. Ułóż scenariusz</span>
+    <p>Klikaj linie w odpowiedniej kolejności, aby ułożyć scenariusz podstawowy dla historyjki #14.</p>
     <ul class="done"></ul>
     <ul class="pool">
       <li data-n="4">Gdy Anna wybierze przedłużenie o 7 dni</li>
@@ -119,64 +144,78 @@
     <p class="score"></p>
   </div>
 
-  <p>A tak wygląda drugi scenariusz tej samej historyjki — wyjątek:</p>
-  <pre class="gherkin"><b>Scenariusz:</b> próba przedłużenia, gdy aparat jest zarezerwowany
+  <p>Poniżej znajdziesz drugi scenariusz tej samej historyjki, opisujący sytuację wyjątkową:</p>
+  <pre class="gherkin"><b>Scenariusz:</b> przedłużenie, gdy aparat jest zarezerwowany
   <b>Zakładając, że</b> Anna ma wypożyczony aparat A-17 z terminem zwrotu 10 listopada
   <b>Oraz</b> Bartek zarezerwował aparat A-17 od 12 listopada
   <b>Gdy</b> Anna wybierze przedłużenie o 7 dni
-  <b>Wtedy</b> termin zwrotu pozostanie 10 listopada
+  <b>Wtedy</b> termin zwrotu pozostanie bez zmian
   <b>Oraz</b> Anna zobaczy informację, że aparat jest zarezerwowany od 12 listopada
   <b>Ale</b> będzie mogła przedłużyć wypożyczenie do 11 listopada</pre>
-  <p>Zauważ ostatnią linię. Nikt tego nie zapisał w opisie przypadku — wyszło dopiero przy pisaniu scenariusza z konkretnymi datami. To jest pytanie do pani Ewy, nie decyzja do podjęcia samodzielnie.</p>
+  <div class="box">
+    <span class="label">Zwróć uwagę</span>
+    Ostatnia linia scenariusza (przedłużenie do 11 listopada) nie wynikała z opisu zamawiającego. Pojawiła się dopiero podczas pisania scenariusza z konkretnymi datami. Takie kwestie należy uzgodnić z zamawiającym.
+  </div>
 
-  <h2><span class="no">2.5</span>Dzielenie historyjek</h2>
-  <p>Duże historyjki (epiki) trzeba dzielić, ale tak, żeby <b>każdy kawałek nadal dawał wartość</b>. Kawałek tortu, a nie warstwa tortu: przekrój przez interfejs, logikę i dane, a nie sam interfejs.</p>
+  <h2>2.5. Dzielenie historyjek</h2>
+  <p>Zbyt duże historyjki należy dzielić na mniejsze. Ważne jest, aby każda mniejsza historyjka nadal dawała wartość użytkownikowi. Dlatego nie dzielimy historyjek według warstw technicznych (np. osobno interfejs, osobno baza danych), lecz według funkcji widocznych dla użytkownika.</p>
 
   <div class="ex mc">
-    <span class="tag">ćwiczenie 9</span>
+    <span class="tag">Ćwiczenie 9. Wybierz najlepszy podział</span>
     <p>Epik: <b>„Jako student chcę wypożyczać sprzęt przez internet, aby nie tracić czasu na chodzenie do wypożyczalni.”</b> Który podział jest najlepszy?</p>
     <div class="choices">
-      <button data-why="To podział na warstwy techniczne. Żadna z tych części osobno nie daje studentowi niczego — formularz bez API nic nie zapisze, API bez formularza jest niewidoczne.">(1) formularz rezerwacji w interfejsie, (2) API rezerwacji, (3) tabele w bazie danych</button>
-      <button data-ok data-why="Tak — podział według kroków procesu. Już samo przeglądanie z dostępnością rozwiązuje część problemu („nie przychodzić na próżno”), a każda kolejna historyjka dokłada wartość.">(1) przeglądanie katalogu z dostępnością w wybranym dniu, (2) rezerwacja egzemplarza na termin, (3) anulowanie własnej rezerwacji, (4) powiadomienie, że sprzęt czeka na odbiór</button>
-      <button data-why="Podział według osób w zespole to organizacja pracy, nie historyjki. Prowadzi wprost do podziału na warstwy.">(1) część Kasi — frontend, (2) część Tomka — backend, (3) część Oli — testy</button>
+      <button data-why="To podział na warstwy techniczne. Żadna z tych części sama w sobie nie daje wartości studentowi.">(1) formularz rezerwacji w interfejsie, (2) API rezerwacji, (3) tabele w bazie danych</button>
+      <button data-ok data-why="To podział według kroków procesu. Każda historyjka daje studentowi wartość. Już samo przeglądanie katalogu z dostępnością rozwiązuje część problemu.">(1) przeglądanie katalogu z dostępnością w wybranym dniu, (2) rezerwacja egzemplarza na termin, (3) anulowanie własnej rezerwacji, (4) powiadomienie, że sprzęt czeka na odbiór</button>
+      <button data-why="To podział pracy w zespole, a nie podział historyjki. W praktyce prowadzi do podziału na warstwy techniczne.">(1) część Kasi: frontend, (2) część Tomka: backend, (3) część Oli: testy</button>
     </div>
   </div>
 
-  <h3>Typowe sposoby dzielenia</h3>
+  <h3>Sposoby dzielenia historyjek</h3>
   <table>
-    <tr><th>Wzorzec</th><th>Przykład z wypożyczalni</th></tr>
-    <tr><td>Kroki procesu</td><td>przeglądanie → rezerwacja → odbiór → zwrot</td></tr>
-    <tr><td>Ścieżka główna, potem wyjątki</td><td>najpierw przedłużenie, gdy wszystko jest wolne; potem kolizja z inną rezerwacją</td></tr>
-    <tr><td>Warianty reguł biznesowych</td><td>najpierw rezerwacja jednego egzemplarza; potem rezerwacja grupowa dla prowadzących</td></tr>
-    <tr><td>Warianty danych</td><td>najpierw laptopy; potem sprzęt z akcesoriami (aparat + obiektywy + karta)</td></tr>
-    <tr><td>Operacje</td><td>dodanie egzemplarza / zmiana opisu / wycofanie z użytku</td></tr>
-    <tr><td>Prosto, potem lepiej</td><td>raport jako plik CSV; później wykresy w systemie</td></tr>
-    <tr><td>Rozpoznanie (spike)</td><td>„sprawdzić, czy da się logować przez USOS” — przed historyjką o logowaniu</td></tr>
+    <tr><th>Sposób</th><th>Przykład dla wypożyczalni</th></tr>
+    <tr><td>Według kroków procesu</td><td>przeglądanie, rezerwacja, odbiór, zwrot</td></tr>
+    <tr><td>Najpierw scenariusz podstawowy, potem wyjątki</td><td>najpierw przedłużenie, gdy sprzęt jest wolny; potem przedłużenie, gdy sprzęt jest zarezerwowany</td></tr>
+    <tr><td>Według reguł biznesowych</td><td>najpierw rezerwacja jednego egzemplarza; potem rezerwacja grupowa dla prowadzących</td></tr>
+    <tr><td>Według rodzaju danych</td><td>najpierw laptopy; potem sprzęt z akcesoriami (aparat z obiektywami)</td></tr>
+    <tr><td>Według operacji</td><td>dodanie egzemplarza, zmiana opisu, wycofanie z użytku</td></tr>
+    <tr><td>Najpierw wersja prosta, potem rozbudowana</td><td>najpierw raport w pliku CSV; później wykresy w systemie</td></tr>
+    <tr><td>Rozpoznanie (spike)</td><td>sprawdzenie, czy można logować się przez USOS, przed historyjką o logowaniu</td></tr>
   </table>
 
-  <h2><span class="no">2.6</span>Wymaganie czy historyjka?</h2>
-  <p>W języku poziomów z <a href="wymagania.html">§1.2</a> historyjka jest jednym ze sposobów zapisu <i>wymagania użytkownika</i>: mówi, co dana rola chce osiągnąć. Wymagania funkcjonalne opisują, co w tym celu robi system. To nie jest wybór „albo–albo”. Wiele zespołów trzyma historyjki w backlogu, a wymagania (zwłaszcza reguły biznesowe i pozafunkcjonalne) w osobnym, żywym dokumencie, do którego historyjki się odwołują.</p>
+  <h2>2.6. Wymaganie funkcjonalne a historyjka</h2>
+  <p>Wymagania funkcjonalne i historyjki nie wykluczają się. Wiele zespołów zapisuje historyjki w backlogu, a reguły biznesowe i wymagania pozafunkcjonalne w osobnym dokumencie.</p>
   <table>
-    <tr><th></th><th>Wymaganie funkcjonalne</th><th>Historyjka</th></tr>
-    <tr><td>Perspektywa</td><td>system („System musi…”)</td><td>użytkownik („Jako… chcę…”)</td></tr>
-    <tr><td>Uzasadnienie</td><td>w polu „źródło”, często pomijane</td><td>wbudowane w szablon („aby…”)</td></tr>
-    <tr><td>Szczegółowość</td><td>pełna, od razu</td><td>minimalna; szczegóły w rozmowie i kryteriach</td></tr>
-    <tr><td>Kiedy powstaje</td><td>zwykle przed realizacją, w całości</td><td>na bieżąco, doprecyzowywana tuż przed realizacją</td></tr>
-    <tr><td>Weryfikacja</td><td>test zgodności z treścią</td><td>kryteria akceptacji</td></tr>
-    <tr><td>Dobrze sprawdza się</td><td>przy umowach, audytach, regulacjach</td><td>gdy zamawiający jest dostępny i zakres się zmienia</td></tr>
+    <tr><th></th><th>Wymaganie funkcjonalne</th><th>Historyjka użytkownika</th></tr>
+    <tr><td>Perspektywa</td><td>systemu („System musi…”)</td><td>użytkownika („Jako… chcę…”)</td></tr>
+    <tr><td>Uzasadnienie</td><td>w polu „źródło”, często pomijane</td><td>w części „aby”</td></tr>
+    <tr><td>Szczegółowość</td><td>pełna</td><td>niewielka; szczegóły w rozmowie i kryteriach akceptacji</td></tr>
+    <tr><td>Kiedy powstaje</td><td>zwykle przed rozpoczęciem prac</td><td>na bieżąco, doprecyzowywana przed realizacją</td></tr>
+    <tr><td>Sprawdzanie</td><td>test zgodności z treścią wymagania</td><td>kryteria akceptacji</td></tr>
+    <tr><td>Kiedy się sprawdza</td><td>umowy, audyty, regulacje prawne</td><td>gdy zamawiający jest dostępny, a zakres się zmienia</td></tr>
   </table>
-  <p>Porównaj FR-14 z tematu 1 z historyjką #14 powyżej. Opisują to samo, ale historyjka mówi, <i>po co</i>, a wymaganie — w jakich dokładnie granicach. Scenariusze akceptacji z §2.4 łączą jedno z drugim.</p>
+  <p>Porównaj wymaganie FR-14 z tematu 1 z historyjką #14. Obie opisują przedłużenie wypożyczenia. Historyjka wyjaśnia, po co jest ta funkcja, a wymaganie dokładnie określa jej zasady.</p>
 
-  <h2><span class="no">2.7</span>Ćwiczenie samodzielne 2</h2>
+  <h2>2.7. Podsumowanie i ćwiczenie samodzielne</h2>
+  <div class="box">
+    <span class="label">Podsumowanie</span>
+    <ul>
+      <li>Historyjka to krótki opis potrzeby użytkownika: „Jako… chcę… aby…”.</li>
+      <li>Historyjka składa się z karty, rozmowy i potwierdzenia (3C).</li>
+      <li>Dobrą historyjkę można ocenić za pomocą kryteriów INVEST.</li>
+      <li>Kryteria akceptacji zapisujemy jako scenariusze „Zakładając, że / Gdy / Wtedy”.</li>
+      <li>Duże historyjki dzielimy tak, aby każda część dawała wartość użytkownikowi.</li>
+    </ul>
+  </div>
+
   <div class="ex">
-    <span class="tag">do samodzielnego wykonania</span>
-    <p>Nie oddajesz tego ćwiczenia. Korzystając z wymagań z ćwiczenia samodzielnego 1:</p>
+    <span class="tag">Ćwiczenie samodzielne 2</span>
+    <p>To ćwiczenie wykonujesz samodzielnie i nie musisz go nigdzie oddawać. Skorzystaj z wymagań zapisanych w ćwiczeniu samodzielnym 1.</p>
     <ol>
-      <li>Zapisz <b>6 historyjek</b> dla wypożyczalni, dla co najmniej trzech różnych ról. Każda musi mieć część „aby”.</li>
-      <li>Przy każdej historyjce wskaż, z którym wymaganiem (lub wymaganiami) z ćwiczenia samodzielnego 1 się wiąże — po identyfikatorze.</li>
-      <li>Dla <b>dwóch</b> historyjek napisz po <b>dwa scenariusze</b> akceptacji (ścieżka główna + wyjątek), z konkretnymi danymi.</li>
-      <li>Weź epik „Jako pracownik wypożyczalni chcę obsługiwać zwroty sprzętu” i podziel go na 3–5 historyjek. Napisz, którego wzorca z §2.5 użyłeś/użyłaś.</li>
-      <li>Wybierz jedną swoją historyjkę, która twoim zdaniem jest najsłabsza w świetle INVEST, i w 2–3 zdaniach wyjaśnij, czego jej brakuje.</li>
+      <li>Zapisz <b>6 historyjek</b> dla systemu wypożyczalni dla co najmniej trzech różnych ról. Każda historyjka musi zawierać część „aby”.</li>
+      <li>Przy każdej historyjce wpisz identyfikatory powiązanych wymagań funkcjonalnych z ćwiczenia samodzielnego 1.</li>
+      <li>Dla <b>dwóch</b> historyjek napisz po <b>dwa scenariusze</b> akceptacji: podstawowy i wyjątkowy. Użyj konkretnych danych.</li>
+      <li>Podziel epik „Jako pracownik wypożyczalni chcę obsługiwać zwroty sprzętu” na 3–5 mniejszych historyjek. Zapisz, z którego sposobu dzielenia skorzystałeś(-aś).</li>
+      <li>Wybierz swoją najsłabszą historyjkę i w 2–3 zdaniach napisz, którego kryterium INVEST nie spełnia.</li>
     </ol>
     <pre id="tpl-us">#__  [punkty: ?]          powiązane: FR-__, FR-__
 Jako  [rola]
@@ -184,23 +223,24 @@ chcę  [cel]
 aby   [korzyść]
 
 Scenariusz: [nazwa]
-  Zakładając, że [kontekst]
+  Zakładając, że [sytuacja początkowa]
   Gdy [działanie]
   Wtedy [wynik]</pre>
-    <button type="button" data-copy="#tpl-us">kopiuj szablon</button>
+    <button type="button" data-copy="#tpl-us">Kopiuj szablon</button>
   </div>
 
-  <h3>Źródła i dalsza lektura</h3>
+  <h2>Literatura</h2>
   <ul class="sources">
     <li>M. Cohn, <i>User Stories Applied: For Agile Software Development</i>, Addison-Wesley 2004.</li>
     <li>R. Jeffries, <i>Essential XP: Card, Conversation, Confirmation</i>, 2001, ronjeffries.com.</li>
     <li>B. Wake, <i>INVEST in Good Stories, and SMART Tasks</i>, 2003, xp123.com.</li>
     <li>R. Lawrence, <i>Patterns for Splitting User Stories</i>, humanizingwork.com.</li>
-    <li>J. Patton, <i>User Story Mapping</i>, O’Reilly 2014 — co dalej, gdy historyjek jest kilkadziesiąt.</li>
+    <li>J. Patton, <i>User Story Mapping</i>, O’Reilly 2014.</li>
   </ul>
 
-  <div class="next"><a href="wymagania.html">← temat 1: wymagania</a><a href="index.html">start</a></div>
+  <div class="next"><a href="wymagania.html">← Temat 1. Wymagania funkcjonalne</a><a href="index.html">Start</a></div>
 </main>
+</div>
 <script src="main.js"></script>
 </body>
 </html>

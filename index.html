@@ -3,73 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ASI — wymagania i historyjki</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<title>ASI: wymagania i historyjki</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <b>ASI</b><span>Architektura systemów informacyjnych · zajęcia asynchroniczne</span>
-  <nav><a href="index.html" aria-current="page">0 start</a><a href="wymagania.html">1 wymagania</a><a href="historyjki.html">2 historyjki</a></nav>
-</header>
+<header class="top"><div class="inner">
+  <div class="course">Architektura systemów informacyjnych<small>Zajęcia asynchroniczne</small></div>
+  <nav><a href="index.html" aria-current="page">Start</a><a href="wymagania.html">Temat 1. Wymagania funkcjonalne</a><a href="historyjki.html">Temat 2. Historyjki użytkownika</a></nav>
+</div></header>
+<div class="wrap single">
 <main>
-  <p class="meta">blok: inżynieria wymagań</p>
-  <h1>Co system ma robić i&nbsp;dla kogo</h1>
-  <p class="lead">Dwa tematy, jeden przypadek do pracy. Czytasz, klikasz, a na końcu każdego tematu czeka większe ćwiczenie do samodzielnego wykonania.</p>
-
-  <p>Te materiały zastępują zajęcia na żywo, więc są zbudowane tak, żeby dało się je przerobić samodzielnie, we własnym tempie. W tekście są ćwiczenia: odpowiedź od razu dostaje uzasadnienie. Nic nie jest zapisywane, oceniane ani oddawane — błędy w ćwiczeniach są po to, żeby je popełnić tutaj, a nie w prawdziwym projekcie.</p>
+  <h1>Wymagania funkcjonalne i historyjki użytkownika</h1>
+  <p class="lead">Witaj na zajęciach asynchronicznych. Materiał składa się z dwóch tematów, które realizujesz samodzielnie, w dowolnym momencie przed kolejnymi zajęciami.</p>
 
   <div class="topics">
     <section class="topic">
-      <p class="meta">temat 1 · ok. 90 min</p>
-      <h2><a href="wymagania.html">Wymagania funkcjonalne</a></h2>
+      <h2>Temat 1. Wymagania funkcjonalne</h2>
+      <p class="muted">Czas: ok. 90 minut</p>
       <ul>
-        <li>dlaczego błędy w wymaganiach są najdroższe,</li>
-        <li>poziomy wymagań: biznesowe, użytkownika, funkcjonalne — i co obok nich,</li>
-        <li>czym różni się wymaganie funkcjonalne od pozafunkcjonalnego,</li>
-        <li>z czego składa się dobrze zapisane wymaganie,</li>
-        <li>jak wyłapać słowa, które czynią wymaganie nietestowalnym.</li>
+        <li>dlaczego błędy w wymaganiach są kosztowne,</li>
+        <li>poziomy wymagań,</li>
+        <li>wymagania funkcjonalne i pozafunkcjonalne,</li>
+        <li>jak zapisać dobre wymaganie.</li>
       </ul>
+      <a class="go" href="wymagania.html">Przejdź do tematu 1</a>
     </section>
     <section class="topic">
-      <p class="meta">temat 2 · ok. 60–75 min</p>
-      <h2><a href="historyjki.html">Historyjki użytkownika</a></h2>
+      <h2>Temat 2. Historyjki użytkownika</h2>
+      <p class="muted">Czas: ok. 75 minut</p>
       <ul>
-        <li>szablon „Jako… chcę… aby…” i dlaczego karta to dopiero początek,</li>
+        <li>szablon „Jako… chcę… aby…”,</li>
         <li>kryteria INVEST,</li>
-        <li>kryteria akceptacji w formacie Zakładając / Gdy / Wtedy,</li>
-        <li>dzielenie zbyt dużych historyjek.</li>
+        <li>kryteria akceptacji,</li>
+        <li>dzielenie dużych historyjek.</li>
       </ul>
+      <a class="go" href="historyjki.html">Przejdź do tematu 2</a>
     </section>
   </div>
 
-  <h2><span class="no">0.1</span>Przypadek: wydziałowa wypożyczalnia sprzętu</h2>
-  <p>Wszystkie przykłady i oba zadania dotyczą tego samego systemu. Warto przeczytać ten opis uważnie — tak wygląda materiał, z którym analityk zwykle zaczyna: trochę chaotyczny, pisany językiem zamawiającego.</p>
+  <h2>Jak pracować z materiałem</h2>
+  <ol>
+    <li>Zacznij od tematu 1, a potem przejdź do tematu 2. Drugi temat korzysta z pierwszego.</li>
+    <li>W tekście znajdziesz ćwiczenia oznaczone ikoną ✎. Po udzieleniu odpowiedzi od razu zobaczysz wyjaśnienie.</li>
+    <li>Na końcu każdego tematu jest większe ćwiczenie samodzielne. Nie trzeba go nigdzie oddawać, ale warto je wykonać na piśmie. Wrócimy do niego na kolejnych zajęciach.</li>
+  </ol>
+  <div class="box">
+    <span class="label">Uwaga</span>
+    Strona nie zapisuje Twoich odpowiedzi. Po odświeżeniu ćwiczenia zaczynają się od nowa, więc możesz je powtarzać dowolną liczbę razy.
+  </div>
 
-  <blockquote>
-    Na wydziale mamy wypożyczalnię: laptopy, aparaty, dyktafony, dwa projektory i statywy. Dziś wszystko idzie przez zeszyt i maile do pani Ewy, która prowadzi wypożyczalnię. Studenci przychodzą, a sprzętu nie ma, bo ktoś go wziął „na słowo”. Część rzeczy wraca po terminie, część uszkodzona i nie wiadomo, kto ją miał ostatni. Prowadzący chcieliby czasem zarezerwować kilka dyktafonów dla całej grupy na badania terenowe. Dziekanat raz na semestr pyta, ile sprzętu było wypożyczane i czy warto coś dokupić. Chcemy, żeby to było proste i nowoczesne i żeby działało też na telefonie.
-  </blockquote>
-  <p class="muted">Zwróć uwagę na ostatnie zdanie. Wrócimy do niego w temacie 1.</p>
+  <h2>Przykład wykorzystywany w obu tematach</h2>
+  <p>Wszystkie przykłady i ćwiczenia dotyczą jednego systemu: wydziałowej wypożyczalni sprzętu. Poniżej znajdziesz opis, który przekazał nam zamawiający. Przeczytaj go uważnie, ponieważ będziemy do niego wielokrotnie wracać.</p>
 
-  <h3>Kto korzysta z systemu</h3>
+  <div class="box example">
+    <span class="label">Opis od zamawiającego</span>
+    <p>Na wydziale mamy wypożyczalnię: laptopy, aparaty, dyktafony, dwa projektory i statywy. Obecnie wszystko odbywa się przez zeszyt i maile do pani Ewy, która prowadzi wypożyczalnię. Studenci przychodzą, a sprzętu nie ma, bo ktoś go wziął „na słowo”. Część rzeczy wraca po terminie, część uszkodzona i nie wiadomo, kto ją miał ostatni. Prowadzący chcieliby czasem zarezerwować kilka dyktafonów dla całej grupy na badania terenowe. Dziekanat raz na semestr pyta, ile sprzętu było wypożyczane i czy warto coś dokupić. Chcemy, żeby to było proste i nowoczesne i żeby działało też na telefonie.</p>
+  </div>
+
+  <p>Z opisu wynika, że z systemu będą korzystać cztery grupy osób:</p>
   <table>
     <tr><th>Rola</th><th>Czego potrzebuje</th></tr>
-    <tr><td>Student</td><td>wiedzieć, co jest dostępne; zarezerwować sprzęt; nie dostać kary przez zapomnienie</td></tr>
+    <tr><td>Student</td><td>sprawdzić, co jest dostępne; zarezerwować sprzęt; pamiętać o terminie zwrotu</td></tr>
     <tr><td>Prowadzący</td><td>zarezerwować kilka egzemplarzy naraz dla grupy</td></tr>
-    <tr><td>Pracownik wypożyczalni</td><td>wydawać i przyjmować sprzęt; wiedzieć, kto ma co i w jakim stanie</td></tr>
-    <tr><td>Dziekanat</td><td>zestawienia do decyzji zakupowych</td></tr>
+    <tr><td>Pracownik wypożyczalni</td><td>wydawać i przyjmować sprzęt; wiedzieć, kto ma jaki sprzęt i w jakim jest on stanie</td></tr>
+    <tr><td>Dziekanat</td><td>otrzymywać zestawienia potrzebne do decyzji o zakupach</td></tr>
   </table>
 
-  <h2><span class="no">0.2</span>Jak pracować</h2>
-  <ol>
-    <li>Przejdź temat 1, łącznie z ćwiczeniami. Na końcu jest ćwiczenie samodzielne 1.</li>
-    <li>Przejdź temat 2. Ćwiczenie samodzielne 2 korzysta z wyników ćwiczenia 1.</li>
-    <li>Ćwiczeń samodzielnych nigdzie nie oddajesz. Zrób je jednak naprawdę, na piśmie — przydadzą się na kolejnych zajęciach, a różnicę między „rozumiem” a „umiem zapisać” widać dopiero przy pisaniu.</li>
-  </ol>
-  <p>Strona nie zapamiętuje odpowiedzi — przeładowanie zaczyna ćwiczenia od nowa.</p>
-
-  <div class="next"><span></span><a href="wymagania.html">temat 1: wymagania funkcjonalne →</a></div>
+  <div class="next"><span></span><a href="wymagania.html">Temat 1. Wymagania funkcjonalne →</a></div>
 </main>
+</div>
 </body>
 </html>
