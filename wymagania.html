@@ -74,19 +74,19 @@
   </div>
 
   <h2>1.2. Poziomy i rodzaje wymagań</h2>
-  <p>Słowo „wymaganie” bywa rozumiane bardzo różnie. Dla dziekana może oznaczać cel, dla studenta potrzebę, a dla programisty opis funkcji. W tym kursie korzystamy z definicji Sommerville’a i Sawyera (1997): wymagania określają, co należy zaimplementować. Opisują zachowanie systemu albo jego właściwości i mogą też nakładać ograniczenia na sposób jego tworzenia.</p>
+  <p>Słowo „wymaganie” bywa rozumiane bardzo różnie. Dla kierowniczki kliniki może oznaczać cel, dla klienta potrzebę, a dla programisty opis funkcji. W tym kursie korzystamy z definicji Sommerville’a i Sawyera (1997): wymagania określają, co należy zaimplementować. Opisują zachowanie systemu albo jego właściwości i mogą też nakładać ograniczenia na sposób jego tworzenia.</p>
   <p>Wiegers i Beatty wyróżniają trzy poziomy wymagań:</p>
 
   <ol class="levels">
-    <li><b>Wymagania biznesowe</b> odpowiadają na pytanie: <i>dlaczego</i> organizacja potrzebuje systemu? Opisują cel organizacji.<br><small>Przykład: zmniejszyć liczbę spóźnionych zwrotów sprzętu.</small></li>
-    <li><b>Wymagania użytkownika</b> odpowiadają na pytanie: <i>co</i> użytkownik ma osiągnąć za pomocą systemu? Opisują zadania, które dana grupa użytkowników musi móc wykonać. Można je zapisać m.in. jako przypadki użycia albo historyjki użytkownika (temat 2).<br><small>Przykład: student chce sprawdzić, czy laptop będzie dostępny w czwartek.</small></li>
-    <li><b>Wymagania funkcjonalne</b> odpowiadają na pytanie: <i>co robi system</i>? Opisują zachowanie systemu w określonych warunkach.<br><small>Przykład: system wyświetla listę laptopów wraz z informacją o ich dostępności w wybranym dniu.</small></li>
+    <li><b>Wymagania biznesowe</b> odpowiadają na pytanie: <i>dlaczego</i> organizacja potrzebuje systemu? Opisują cel organizacji.<br><small>Przykład: zmniejszyć liczbę telefonów na recepcję i liczbę wizyt, na które klienci nie przychodzą.</small></li>
+    <li><b>Wymagania użytkownika</b> odpowiadają na pytanie: <i>co</i> użytkownik ma osiągnąć za pomocą systemu? Opisują zadania, które dana grupa użytkowników musi móc wykonać. Można je zapisać m.in. jako przypadki użycia albo historyjki użytkownika (temat 2).<br><small>Przykład: właściciel psa chce sprawdzić, czy w sobotę jest wolny termin u wybranego lekarza.</small></li>
+    <li><b>Wymagania funkcjonalne</b> odpowiadają na pytanie: <i>co robi system</i>? Opisują zachowanie systemu w określonych warunkach.<br><small>Przykład: system wyświetla wolne terminy wybranego lekarza w wybranym dniu.</small></li>
   </ol>
 
   <p>Oprócz tych trzech poziomów spotkasz też inne rodzaje informacji:</p>
   <dl class="terms">
     <dt>Wymagania pozafunkcjonalne</dt>
-    <dd>Opisują cechy jakościowe systemu (np. wydajność, bezpieczeństwo, dostępność), interfejsy z innymi systemami (np. logowanie przez USOS) oraz ograniczenia (np. narzucona technologia, przepisy prawa).</dd>
+    <dd>Opisują cechy jakościowe systemu (np. wydajność, bezpieczeństwo, dostępność), interfejsy z innymi systemami (np. wysyłanie SMS-ów przez bramkę operatora) oraz ograniczenia (np. narzucona technologia, przepisy prawa).</dd>
     <dt>Reguły biznesowe</dt>
     <dd>Regulaminy, przepisy, zasady i sposoby obliczeń obowiązujące w organizacji. Same nie są wymaganiami wobec systemu, bo istnieją niezależnie od niego. Są jednak źródłem wielu wymagań funkcjonalnych.</dd>
     <dt>Wymagania projektu</dt>
@@ -100,16 +100,16 @@
 
   <div class="ex">
     <span class="tag">Ćwiczenie 1. Rozpoznaj rodzaj wymagania</span>
-    <p>Poniższe zdania pochodzą z notatek analityka pracującego nad systemem wypożyczalni. Określ, do jakiego rodzaju informacji należy każde z nich.</p>
+    <p>Poniższe zdania pochodzą z notatek analityka pracującego nad systemem dla kliniki. Określ, do jakiego rodzaju informacji należy każde z nich.</p>
     <ol class="sort" data-opts="B:biznesowe|U:użytkownika|F:funkcjonalne|N:pozafunkcjonalne|R:reguła biznesowa|P:projektu">
-      <li data-a="B" data-why="To cel organizacji, określony liczbą i terminem. Nie opisuje jeszcze, co ma robić system.">W ciągu roku od wdrożenia zmniejszyć o połowę liczbę wypożyczeń zwracanych po terminie.</li>
-      <li data-a="U" data-why="To zadanie, które chce wykonać konkretna grupa użytkowników. Nie wiadomo jeszcze, w jaki sposób system to umożliwi.">Prowadząca chce zarezerwować komplet dyktafonów dla swojej grupy na badania terenowe.</li>
-      <li data-a="F" data-why="To konkretne zachowanie systemu w określonej sytuacji. Realizuje wymaganie użytkownika z poprzedniego punktu.">Po zatwierdzeniu rezerwacji grupowej system wysyła prowadzącemu listę zarezerwowanych egzemplarzy z numerami inwentarzowymi.</li>
-      <li data-a="R" data-why="To zasada wypożyczalni, która obowiązuje także bez systemu. Wynikają z niej wymagania funkcjonalne, np. „system nie pozwala wybrać daty zwrotu późniejszej niż 14 dni od wypożyczenia”.">Regulamin wypożyczalni: sprzęt można wypożyczyć na maksymalnie 14 dni.</li>
+      <li data-a="B" data-why="To cel organizacji, określony liczbą i terminem. Nie opisuje jeszcze, co ma robić system.">W ciągu roku od wdrożenia zmniejszyć o 30% liczbę wizyt, na które klient nie przyszedł i ich nie odwołał.</li>
+      <li data-a="U" data-why="To zadanie, które chce wykonać konkretna grupa użytkowników. Nie wiadomo jeszcze, w jaki sposób system to umożliwi.">Lekarz chce przed wizytą zobaczyć historię leczenia zwierzęcia.</li>
+      <li data-a="F" data-why="To konkretne zachowanie systemu w określonej sytuacji.">Po umówieniu wizyty system wysyła klientowi SMS z potwierdzeniem zawierającym datę, godzinę, nazwisko lekarza i adres kliniki.</li>
+      <li data-a="R" data-why="To zasada kliniki, która obowiązuje także bez systemu. Wynikają z niej wymagania funkcjonalne, np. „system nie pozwala odwołać wizyty online później niż 24 godziny przed jej terminem”.">Regulamin kliniki: wizytę można odwołać bez opłaty najpóźniej 24 godziny przed jej terminem.</li>
       <li data-a="N" data-why="To wymaganie dotyczące wydajności. Odnosi się do całego systemu, a nie do jednej funkcji.">Przy 200 jednocześnie zalogowanych użytkownikach czas odpowiedzi nie przekracza 2 sekund.</li>
-      <li data-a="P" data-why="Przeniesienie danych trzeba wykonać, aby wdrożenie się udało, ale nie jest to funkcja systemu.">Przed uruchomieniem systemu dane z zeszytu wypożyczalni z ostatnich dwóch lat zostaną przeniesione do bazy.</li>
-      <li data-a="U" data-why="To cel użytkownika opisany jego słowami. Analityk wyprowadzi z niego wymagania funkcjonalne, np. wyszukiwanie sprzętu i kalendarz dostępności.">Student chce wiedzieć, czy laptop będzie dostępny w czwartek, zanim przyjedzie na wydział.</li>
-      <li data-a="P" data-why="Szkolenie jest potrzebne w projekcie, ale nie jest cechą oprogramowania.">Pracownicy wypożyczalni przejdą dwugodzinne szkolenie z obsługi nowego systemu.</li>
+      <li data-a="P" data-why="Przeniesienie danych trzeba wykonać, aby wdrożenie się udało, ale nie jest to funkcja systemu.">Przed uruchomieniem systemu dane pacjentów z papierowych kart z ostatnich pięciu lat zostaną przeniesione do bazy.</li>
+      <li data-a="U" data-why="To cel użytkownika opisany jego słowami. Analityk wyprowadzi z niego wymagania funkcjonalne, np. wyświetlanie wolnych terminów i umawianie wizyty online.">Właścicielka kota chce umówić wizytę wieczorem, gdy recepcja jest już zamknięta.</li>
+      <li data-a="P" data-why="Szkolenie jest potrzebne w projekcie, ale nie jest cechą oprogramowania.">Recepcjonistki przejdą dwugodzinne szkolenie z obsługi nowego systemu.</li>
     </ol>
   </div>
 
@@ -117,12 +117,12 @@
   <p><b>Wymaganie funkcjonalne</b> opisuje, co system robi: jak reaguje na działania użytkownika lub na określone zdarzenia, jakie dane przetwarza i jaki wynik zwraca.</p>
   <div class="box example">
     <span class="label">Przykład</span>
-    System wysyła studentowi e-mail z przypomnieniem 24 godziny przed terminem zwrotu sprzętu.
+    System wysyła klientowi SMS z przypomnieniem 24 godziny przed wizytą.
   </div>
   <p><b>Wymaganie pozafunkcjonalne</b> opisuje, jak dobrze system ma działać albo jakie ograniczenia musi spełniać. Dotyczy np. wydajności, dostępności, bezpieczeństwa, użyteczności lub zgodności z przepisami.</p>
   <div class="box example">
     <span class="label">Przykład</span>
-    Strona z listą sprzętu ładuje się w czasie nie dłuższym niż 2 sekundy.
+    Strona z wolnymi terminami ładuje się w czasie nie dłuższym niż 2 sekundy.
   </div>
 
   <div class="box remember">
@@ -134,22 +134,22 @@
     <span class="tag">Ćwiczenie 2. Funkcjonalne czy pozafunkcjonalne?</span>
     <p>Przypisz każde zdanie do właściwej grupy. Uwaga: kilka przykładów jest trudniejszych, dlatego czytaj wyjaśnienia.</p>
     <ol class="sort" data-opts="F:funkcjonalne|N:pozafunkcjonalne">
-      <li data-a="F" data-why="Opisuje konkretną czynność użytkownika i jej wynik.">System umożliwia studentowi zarezerwowanie wybranego egzemplarza sprzętu na wskazany termin.</li>
-      <li data-a="N" data-why="Dotyczy wydajności, czyli tego, jak szybko działa funkcja, a nie tego, co robi.">Strona z listą sprzętu ładuje się w czasie nie dłuższym niż 2 s dla 95% żądań.</li>
-      <li data-a="F" data-why="Opisuje reakcję systemu na zdarzenie (zbliżający się termin zwrotu).">System wysyła e-mail z przypomnieniem 24 h przed upływem terminu zwrotu.</li>
+      <li data-a="F" data-why="Opisuje konkretną czynność użytkownika i jej wynik.">System umożliwia klientowi umówienie wizyty u wybranego lekarza w wolnym terminie.</li>
+      <li data-a="N" data-why="Dotyczy wydajności, czyli tego, jak szybko działa funkcja, a nie tego, co robi.">Strona z wolnymi terminami ładuje się w czasie nie dłuższym niż 2 s dla 95% żądań.</li>
+      <li data-a="F" data-why="Opisuje reakcję systemu na zdarzenie (zbliżający się termin wizyty).">System wysyła SMS z przypomnieniem 24 h przed wizytą.</li>
       <li data-a="N" data-why="Dotyczy zgodności z przeglądarkami, czyli cechy całego systemu.">System działa poprawnie w dwóch najnowszych wersjach przeglądarek Firefox, Chrome i Safari.</li>
-      <li data-a="F" data-why="Opisuje czynność pracownika i jej skutek w systemie.">Pracownik wypożyczalni może oznaczyć egzemplarz jako uszkodzony, co blokuje możliwość jego rezerwacji.</li>
+      <li data-a="F" data-why="Opisuje czynność recepcjonistki i jej skutek w systemie.">Recepcjonistka może zablokować wybrany przedział czasu w kalendarzu lekarza (np. urlop), co uniemożliwia umawianie wizyt w tym czasie.</li>
       <li data-a="N" data-why="Dotyczy bezpieczeństwa. Użytkownik nie wywołuje tej funkcji, to sposób przechowywania danych.">Hasła użytkowników są przechowywane wyłącznie jako skróty kryptograficzne.</li>
-      <li data-a="F" data-why="Sama zasada pochodzi z regulaminu wypożyczalni (reguła biznesowa), ale opisane zachowanie systemu jest wymaganiem funkcjonalnym.">System blokuje możliwość rezerwacji na 14 dni studentowi, który zwrócił sprzęt z opóźnieniem większym niż 3 dni.</li>
+      <li data-a="F" data-why="Sama zasada pochodzi z regulaminu kliniki (reguła biznesowa), ale opisane zachowanie systemu jest wymaganiem funkcjonalnym.">System blokuje możliwość umawiania wizyt online na 30 dni klientowi, który dwa razy nie przyszedł na wizytę i jej nie odwołał.</li>
       <li data-a="N" data-why="Dotyczy dostępności interfejsu dla osób z niepełnosprawnościami.">Interfejs spełnia wymagania WCAG 2.1 na poziomie AA.</li>
-      <li data-a="F" data-why="Opisuje konkretny wynik działania systemu: raport o określonym zakresie i formacie.">System generuje miesięczne zestawienie wypożyczeń w formacie CSV.</li>
-      <li data-a="N" data-why="Dotyczy niezawodności systemu.">System jest dostępny przez 99,5% czasu w godzinach 8–20 w dni robocze.</li>
-      <li data-a="F" data-why="To trudniejszy przypadek. Brzmi jak wymaganie dotyczące bezpieczeństwa, ale opisuje zachowanie systemu: zapisanie określonych danych, które ktoś później przegląda.">Każda zmiana statusu egzemplarza jest zapisywana w historii zmian wraz z datą i autorem.</li>
+      <li data-a="F" data-why="Opisuje konkretny wynik działania systemu: raport o określonym zakresie i formacie.">System generuje miesięczne zestawienie wizyt w podziale na rodzaj usługi w formacie CSV.</li>
+      <li data-a="N" data-why="Dotyczy niezawodności systemu.">System jest dostępny przez 99,5% czasu w godzinach 7–22.</li>
+      <li data-a="F" data-why="To trudniejszy przypadek. Brzmi jak wymaganie dotyczące bezpieczeństwa, ale opisuje zachowanie systemu: zapisanie określonych danych, które ktoś później przegląda.">Każda zmiana w karcie pacjenta jest zapisywana w historii zmian wraz z datą i autorem.</li>
       <li data-a="N" data-why="To ograniczenie dotyczące technologii. Nie opisuje, co robi system.">System zostanie zaimplementowany w języku Python.</li>
     </ol>
   </div>
 
-  <p>Częstym błędem jest łączenie obu rodzajów wymagań w jednym zdaniu, np. „System szybko wyszukuje sprzęt”. Takie zdanie należy rozdzielić na dwa wymagania. Wrócimy do tego w ćwiczeniu 4.</p>
+  <p>Częstym błędem jest łączenie obu rodzajów wymagań w jednym zdaniu, np. „System szybko wyszukuje wolne terminy”. Takie zdanie należy rozdzielić na dwa wymagania. Wrócimy do tego w ćwiczeniu 4.</p>
 
   <h2>1.4. Budowa wymagania funkcjonalnego</h2>
   <p>Nie ma jednego obowiązkowego formatu zapisu wymagań, ale większość szablonów zawiera podobne elementy. Kliknij kolejne fragmenty wymagania, aby zobaczyć ich opis.</p>
@@ -158,14 +158,14 @@
     <span class="tag">Kliknij elementy wymagania</span>
     <p class="anat">
       <button data-note="<b>Identyfikator.</b> Unikalny numer, który się nie zmienia. Pozwala powiązać wymaganie z historyjką, testem lub fragmentem kodu.">FR-14</button>
-      <button data-note="<b>Aktor.</b> Osoba lub system, który wykonuje działanie. Określenie „użytkownik” jest zwykle zbyt ogólne, bo różne grupy użytkowników mają różne uprawnienia.">Student</button>
+      <button data-note="<b>Aktor.</b> Osoba lub system, który wykonuje działanie. Określenie „użytkownik” jest zwykle zbyt ogólne, bo różne grupy użytkowników mają różne uprawnienia.">Klient</button>
       <button data-note="<b>Czasownik modalny.</b> Określa, jak ważne jest wymaganie: <i>musi</i> oznacza wymaganie obowiązkowe, <i>powinien</i> zalecane, a <i>może</i> opcjonalne. W całym dokumencie należy stosować te słowa w ten sam sposób.">musi mieć możliwość</button>
-      <button data-note="<b>Działanie i jego parametry.</b> Jedna konkretna czynność. Jeśli to możliwe, podaj liczby.">przedłużenia aktywnego wypożyczenia o maksymalnie 7 dni,</button>
-      <button data-note="<b>Warunek.</b> Określa, kiedy działanie jest dozwolone. W warunkach często kryją się reguły biznesowe. Zawsze zapytaj też: co się dzieje, jeśli warunek nie jest spełniony?">o ile egzemplarz nie jest zarezerwowany przez inną osobę w tym okresie.</button>
+      <button data-note="<b>Działanie i jego parametry.</b> Jedna konkretna czynność. Jeśli to możliwe, podaj liczby.">przełożenia umówionej wizyty na inny wolny termin u tego samego lekarza,</button>
+      <button data-note="<b>Warunek.</b> Określa, kiedy działanie jest dozwolone. W warunkach często kryją się reguły biznesowe. Zawsze zapytaj też: co się dzieje, jeśli warunek nie jest spełniony?">o ile do pierwotnego terminu wizyty pozostały co najmniej 24 godziny.</button>
     </p>
     <p class="anat" style="font-size:.9rem">
       <button data-note="<b>Priorytet.</b> Często określa się go metodą MoSCoW: <i>Must</i> (musi być), <i>Should</i> (powinno być), <i>Could</i> (może być), <i>Won’t</i> (nie w tej wersji).">Priorytet: Must</button>
-      <button data-note="<b>Źródło.</b> Skąd pochodzi wymaganie: od kogo, z jakiego dokumentu lub spotkania. Dzięki temu wiadomo, kogo zapytać w razie wątpliwości.">Źródło: wywiad z kierowniczką wypożyczalni, 12.03</button>
+      <button data-note="<b>Źródło.</b> Skąd pochodzi wymaganie: od kogo, z jakiego dokumentu lub spotkania. Dzięki temu wiadomo, kogo zapytać w razie wątpliwości.">Źródło: wywiad z kierowniczką kliniki, 12.03</button>
       <button data-note="<b>Sposób weryfikacji.</b> Jak sprawdzimy, że wymaganie zostało spełnione, np. test, demonstracja, inspekcja. Jeśli nie potrafisz tego określić, wymaganie jest prawdopodobnie niejasne.">Weryfikacja: test akceptacyjny TA-14</button>
     </p>
     <p class="note muted">Kliknij wybrany fragment.</p>
@@ -186,20 +186,20 @@
   </table>
   <div class="box remember">
     <span class="label">Zapamiętaj</span>
-    Wymaganie opisuje, <b>co</b> ma robić system, a nie <b>jak</b> ma być zbudowany. Zdanie „System wyszukuje sprzęt za pomocą Elasticsearch” to decyzja projektowa, a nie wymaganie funkcjonalne.
+    Wymaganie opisuje, <b>co</b> ma robić system, a nie <b>jak</b> ma być zbudowany. Zdanie „System zapisuje wizyty w bazie PostgreSQL” to decyzja projektowa, a nie wymaganie funkcjonalne.
   </div>
 
   <h2>1.6. Niejasne sformułowania</h2>
-  <p>Wróć do ostatniego zdania z opisu wypożyczalni: „Chcemy, żeby to było proste i nowoczesne”. Każda osoba w zespole może wyobrazić sobie coś innego. Słowa takie jak „proste”, „szybkie” czy „intuicyjne” mogą pojawić się w rozmowie z zamawiającym, ale są sygnałem, że trzeba dopytać o szczegóły. W zapisanym wymaganiu należy je zastąpić czymś, co da się sprawdzić.</p>
+  <p>Wróć do opisu kliniki: „System ma być prosty i nowoczesny”. Każda osoba w zespole może wyobrazić sobie coś innego. Słowa takie jak „proste”, „szybkie” czy „intuicyjne” mogą pojawić się w rozmowie z zamawiającym, ale są sygnałem, że trzeba dopytać o szczegóły. W zapisanym wymaganiu należy je zastąpić czymś, co da się sprawdzić.</p>
 
   <div class="ex detector">
     <span class="tag">Ćwiczenie 3. Wyszukaj niejasne słowa</span>
     <p>Wpisz wymaganie (własne lub jeden z przykładów). Narzędzie zaznaczy słowa, które często powodują niejednoznaczność. Najedź kursorem na zaznaczenie, aby zobaczyć podpowiedź.</p>
     <p style="display:flex;flex-wrap:wrap;gap:.4rem">
-      <button type="button" data-sample="System powinien szybko i intuicyjnie wyszukiwać sprzęt.">Przykład A</button>
-      <button type="button" data-sample="Pracownik wypożyczalni może zarządzać egzemplarzami (dodawanie, edycja, usuwanie itp.), jeśli to możliwe także z telefonu.">Przykład B</button>
+      <button type="button" data-sample="System powinien szybko i intuicyjnie wyszukiwać wolne terminy.">Przykład A</button>
+      <button type="button" data-sample="Recepcjonistka może zarządzać wizytami (dodawanie, edycja, usuwanie itp.), jeśli to możliwe także z telefonu.">Przykład B</button>
       <button type="button" data-sample="Zazwyczaj system wysyła odpowiednie powiadomienia do wszystkich zainteresowanych osób.">Przykład C</button>
-      <button type="button" data-sample="FR-09: System wysyła studentowi wiadomość e-mail 24 godziny przed terminem zwrotu każdego wypożyczonego egzemplarza.">Przykład D</button>
+      <button type="button" data-sample="FR-09: System wysyła klientowi SMS 24 godziny przed terminem każdej umówionej wizyty.">Przykład D</button>
     </p>
     <textarea aria-label="Treść wymagania" placeholder="Np. System musi…"></textarea>
     <div class="hl" aria-live="polite"></div>
@@ -212,21 +212,21 @@
 
   <div class="ex mc">
     <span class="tag">Ćwiczenie 4a</span>
-    <p>Wymaganie: <b>„System powinien szybko wyszukiwać sprzęt.”</b></p>
+    <p>Wymaganie: <b>„System powinien szybko wyszukiwać wolne terminy.”</b></p>
     <div class="choices">
-      <button data-why="Słowa „bardzo szybko” nadal nie określają czasu, a „sprawnie” to kolejne niejasne słowo.">System musi bardzo szybko i sprawnie wyszukiwać sprzęt.</button>
-      <button data-ok data-why="Pierwotne zdanie łączyło dwa wymagania: funkcjonalne (co jest wyszukiwane) i pozafunkcjonalne (w jakim czasie). Po rozdzieleniu oba można sprawdzić.">FR-07: System wyświetla egzemplarze, których nazwa lub kategoria zawiera wpisaną frazę, z możliwością zawężenia wyników do sprzętu dostępnego we wskazanym terminie.<br>NFR-03: Wyniki wyszukiwania pojawiają się w czasie do 1 s dla 95% zapytań przy 50 jednoczesnych użytkownikach.</button>
-      <button data-why="To decyzja projektowa, a nie wymaganie. Nadal nie wiadomo, po czym wyszukujemy ani jak szybko ma to działać.">System musi wyszukiwać sprzęt z wykorzystaniem silnika Elasticsearch.</button>
+      <button data-why="Słowa „bardzo szybko” nadal nie określają czasu, a „sprawnie” to kolejne niejasne słowo.">System musi bardzo szybko i sprawnie wyszukiwać wolne terminy.</button>
+      <button data-ok data-why="Pierwotne zdanie łączyło dwa wymagania: funkcjonalne (co jest wyszukiwane) i pozafunkcjonalne (w jakim czasie). Po rozdzieleniu oba można sprawdzić.">FR-07: System wyświetla wolne terminy wizyt w wybranym dniu, z możliwością zawężenia wyników do wybranego lekarza i rodzaju wizyty.<br>NFR-03: Wyniki wyszukiwania pojawiają się w czasie do 1 s dla 95% zapytań przy 50 jednoczesnych użytkownikach.</button>
+      <button data-why="To decyzja projektowa, a nie wymaganie. Nadal nie wiadomo, według jakich kryteriów wyszukujemy terminy ani jak szybko ma to działać.">System musi wyszukiwać wolne terminy z wykorzystaniem silnika Elasticsearch.</button>
     </div>
   </div>
 
   <div class="ex mc">
     <span class="tag">Ćwiczenie 4b</span>
-    <p>Wymaganie: <b>„Użytkownik może zarządzać rezerwacjami.”</b></p>
+    <p>Wymaganie: <b>„Użytkownik może zarządzać wizytami.”</b></p>
     <div class="choices">
-      <button data-why="Dodano niejasne słowa „w pełni” i „intuicyjny”, a ogólne słowo „zarządzać” pozostało.">Użytkownik może w pełni zarządzać rezerwacjami w intuicyjny sposób.</button>
-      <button data-why="To lepsza wersja, ale „itp.” oznacza otwartą listę, a „edycja” nie mówi, co można zmienić. Rola nadal jest zbyt ogólna.">Użytkownik może zarządzać rezerwacjami (dodawanie, edycja, usuwanie itp.).</button>
-      <button data-ok data-why="Każde wymaganie ma konkretną rolę, jedną czynność i warunek. Przy takim rozpisaniu pojawiają się też pytania do zamawiającego, np. do kiedy można anulować rezerwację.">FR-11: Student może anulować własną rezerwację do momentu odbioru sprzętu.<br>FR-12: Student może zmienić termin własnej rezerwacji, jeśli egzemplarz jest wolny w nowym terminie.<br>FR-13: Pracownik wypożyczalni może anulować dowolną rezerwację, podając powód widoczny dla studenta.</button>
+      <button data-why="Dodano niejasne słowa „w pełni” i „intuicyjny”, a ogólne słowo „zarządzać” pozostało.">Użytkownik może w pełni zarządzać wizytami w intuicyjny sposób.</button>
+      <button data-why="To lepsza wersja, ale „itp.” oznacza otwartą listę, a „edycja” nie mówi, co można zmienić. Rola nadal jest zbyt ogólna.">Użytkownik może zarządzać wizytami (dodawanie, edycja, usuwanie itp.).</button>
+      <button data-ok data-why="Każde wymaganie ma konkretną rolę, jedną czynność i warunek. Przy takim rozpisaniu pojawiają się też pytania do zamawiającego, np. co się dzieje, gdy klient chce odwołać wizytę później niż 24 godziny przed jej terminem.">FR-11: Klient może odwołać własną wizytę najpóźniej 24 godziny przed jej terminem.<br>FR-12: Klient może przełożyć własną wizytę na inny wolny termin u tego samego lekarza.<br>FR-13: Recepcjonistka może odwołać dowolną wizytę, podając powód, który klient otrzyma w wiadomości SMS.</button>
     </div>
   </div>
 
@@ -241,7 +241,7 @@
   </div>
 
   <h2>1.8. Jak powstają wymagania</h2>
-  <p>Wymagania <b>pozyskuje się</b> od interesariuszy, np. podczas wywiadów, obserwacji pracy, analizy dokumentów (np. regulaminu wypożyczalni), warsztatów i pokazów prototypów. Opis od zamawiającego, który znasz ze strony startowej, to dopiero punkt wyjścia. Zawiera potrzeby, ale prawie żadnych gotowych wymagań.</p>
+  <p>Wymagania <b>pozyskuje się</b> od interesariuszy, np. podczas wywiadów, obserwacji pracy, analizy dokumentów (np. regulaminu kliniki), warsztatów i pokazów prototypów. Opis od zamawiającego, który znasz ze strony startowej, to dopiero punkt wyjścia. Zawiera potrzeby, ale prawie żadnych gotowych wymagań.</p>
   <p>Wszystkie działania związane z wymaganiami nazywamy <b>inżynierią wymagań</b>. Wiegers i Beatty dzielą ją na dwie części:</p>
   <table>
     <tr><th colspan="2">Opracowywanie wymagań</th></tr>
@@ -256,13 +256,13 @@
 
   <div class="ex">
     <span class="tag">Ćwiczenie 5. Co poszło nie tak?</span>
-    <p>Poniżej znajdziesz pięć sytuacji z projektu wypożyczalni. Każda z nich ilustruje jedno z typowych zagrożeń opisanych przez Wiegersa i Beatty. Wskaż, które.</p>
+    <p>Poniżej znajdziesz pięć sytuacji z projektu systemu dla kliniki. Każda z nich ilustruje jedno z typowych zagrożeń opisanych przez Wiegersa i Beatty. Wskaż, które.</p>
     <ol class="sort" data-opts="Z:złocenie|P:rozrastanie się zakresu|I:pominięty interesariusz|J:niejednoznaczność|U:mały udział użytkowników">
-      <li data-a="Z" data-why="To złocenie (ang. gold plating): dodanie funkcji, o którą nikt nie prosił, bo „na pewno się spodoba”. Zabiera czas potrzebny na zamówione funkcje.">Programista dodał ranking „najaktywniejszych wypożyczających”, bo uznał, że studentom się spodoba. Nikt o to nie prosił.</li>
-      <li data-a="I" data-why="Kwestura nie korzysta z systemu, ale ma wobec niego wymagania. Takich interesariuszy łatwo pominąć, a ich wymagania i tak się pojawią, tylko później.">Tydzień przed wdrożeniem kwestura informuje, że sprzęt o wartości powyżej 5000 zł może być wydany tylko po podpisaniu protokołu. Nikt wcześniej nie rozmawiał z kwesturą.</li>
-      <li data-a="P" data-why="To rozrastanie się zakresu (ang. scope creep). Każda zmiana osobno wydaje się niewielka, ale razem zwiększają zakres pracy, a termin się nie zmienia.">Co tydzień dziekanat prosi o kolejną „drobną” funkcję: eksport do Excela, potem do USOS, potem statystyki dla rektora. Termin oddania się nie zmienia.</li>
-      <li data-a="J" data-why="Obie strony inaczej zrozumiały to samo słowo i nikt tego nie zauważył. Pomógłby przykład z konkretnymi datami (zob. temat 2, kryteria akceptacji).">Zespół rozumiał „przedłużenie” jako kolejne 14 dni, a pani Ewa jako przesunięcie zwrotu do końca tygodnia. Okazało się to dopiero na pierwszym pokazie.</li>
-      <li data-a="U" data-why="Wymagania ustalono z osobą, która nie wykonuje tej pracy. Mogą wyglądać poprawnie, ale nie odpowiadać rzeczywistym potrzebom.">Pani Ewa nie miała czasu na spotkania, więc wymagania ustalono z jej przełożonym, który nigdy nie wydawał sprzętu.</li>
+      <li data-a="Z" data-why="To złocenie (ang. gold plating): dodanie funkcji, o którą nikt nie prosił, bo „na pewno się spodoba”. Zabiera czas potrzebny na zamówione funkcje.">Programista dodał do systemu czat z lekarzem, bo uznał, że klientom się spodoba. Nikt o to nie prosił.</li>
+      <li data-a="I" data-why="Inspektor ochrony danych nie korzysta z systemu, ale ma wobec niego wymagania. Takich interesariuszy łatwo pominąć, a ich wymagania i tak się pojawią, tylko później.">Tydzień przed wdrożeniem inspektor ochrony danych informuje, że klinika musi zbierać od klientów zgody na wysyłanie SMS-ów i przechowywać je w systemie. Nikt wcześniej z nim nie rozmawiał.</li>
+      <li data-a="P" data-why="To rozrastanie się zakresu (ang. scope creep). Każda zmiana osobno wydaje się niewielka, ale razem zwiększają zakres pracy, a termin się nie zmienia.">Co tydzień kierowniczka kliniki prosi o kolejną „drobną” funkcję: sklep z karmą, potem program lojalnościowy, potem integrację z laboratorium. Termin oddania się nie zmienia.</li>
+      <li data-a="J" data-why="Obie strony inaczej zrozumiały to samo słowo i nikt tego nie zauważył. Pomógłby przykład z konkretnymi danymi (zob. temat 2, kryteria akceptacji).">Zespół rozumiał „wizytę” jako zawsze 15-minutowy termin, a lekarze jako termin, którego długość zależy od rodzaju wizyty (np. 60 minut na zabieg). Okazało się to dopiero na pierwszym pokazie.</li>
+      <li data-a="U" data-why="Wymagania ustalono z osobą, która nie wykonuje tej pracy. Mogą wyglądać poprawnie, ale nie odpowiadać rzeczywistym potrzebom.">Pani Ewa z recepcji nie miała czasu na spotkania, więc wymagania ustalono z kierowniczką kliniki, która nigdy nie pracowała na recepcji.</li>
     </ol>
   </div>
 
@@ -281,12 +281,12 @@
   <div class="ex">
     <span class="tag">Ćwiczenie samodzielne 1</span>
     <p>To ćwiczenie wykonujesz samodzielnie i nie musisz go nigdzie oddawać. Zachowaj jednak swoje odpowiedzi, ponieważ wykorzystasz je w temacie 2.</p>
-    <p>Na podstawie opisu wypożyczalni:</p>
+    <p>Na podstawie opisu kliniki weterynaryjnej:</p>
     <ol>
       <li>Zapisz <b>10 wymagań funkcjonalnych</b> według poniższego szablonu. Uwzględnij co najmniej trzy różne role i co najmniej trzy wymagania z warunkiem.</li>
-      <li>Zapisz <b>3 wymagania pozafunkcjonalne</b>. Jedno z nich powinno doprecyzować zdanie „ma działać też na telefonie”.</li>
+      <li>Zapisz <b>3 wymagania pozafunkcjonalne</b>. Jedno z nich powinno doprecyzować zdanie „system ma działać też na telefonie”.</li>
       <li>Sprawdź swoje wymagania w narzędziu z ćwiczenia 3 i popraw niejasne sformułowania.</li>
-      <li>Zapisz <b>5 pytań</b>, które zadał(a)byś pani Ewie lub dziekanatowi, ponieważ opis nie daje na nie odpowiedzi.</li>
+      <li>Zapisz <b>5 pytań</b>, które zadał(a)byś kierowniczce kliniki, lekarzom lub pani Ewie z recepcji, ponieważ opis nie daje na nie odpowiedzi.</li>
     </ol>
     <pre id="tpl-fr">ID:          FR-__
 Treść:       [Aktor] musi / powinien / może [działanie] [warunek].

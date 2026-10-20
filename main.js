@@ -165,7 +165,7 @@ $$(".composer").forEach(box => {
     card.innerHTML = `<em>Jako</em> ${esc(r || "…")}<br><em>chcę</em> ${esc(w || "…")}<br><em>aby</em> ${esc(y || "…")}`;
     const msgs = [];
     if (/^(użytkownik|user|osoba|klient|ktoś)\b/i.test(r))
-      msgs.push("Rola jest zbyt ogólna. Napisz, kto to jest, np. student, pracownik wypożyczalni, prowadząca zajęcia.");
+      msgs.push("Rola jest zbyt ogólna. Napisz, kto to jest, np. właściciel psa, recepcjonistka, lekarz weterynarii.");
     if (/\b(przycisk|klikn|baz[aęy]|tabel|api|endpoint|serwer|sql|formularz|dropdown|ekran|json|rest)/i.test(w))
       msgs.push("W części „chcę” opisujesz rozwiązanie techniczne. Opisz raczej, czego potrzebuje użytkownik.");
     if (/\s(i|oraz|a także)\s/i.test(w))

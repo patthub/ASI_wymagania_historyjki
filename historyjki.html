@@ -50,15 +50,15 @@
     <span class="label">Szablon</span>
     <b>Jako</b> &lt;rola&gt; <b>chcę</b> &lt;cel&gt;, <b>aby</b> &lt;korzyść&gt;.
   </div>
-  <p>Oto dwa przykłady dla systemu wypożyczalni:</p>
+  <p>Oto dwa przykłady dla systemu kliniki weterynaryjnej:</p>
   <div class="cards">
     <div class="card">
       <div class="cardhead"><span>#07</span><span>3 pkt</span></div>
-      <p><em>Jako</em> student<br><em>chcę</em> widzieć, które laptopy są wolne w wybranym dniu,<br><em>aby</em> nie przychodzić do wypożyczalni na próżno.</p>
+      <p><em>Jako</em> właściciel psa<br><em>chcę</em> widzieć wolne terminy u wybranego lekarza,<br><em>aby</em> umówić wizytę bez dzwonienia do kliniki.</p>
     </div>
     <div class="card">
       <div class="cardhead"><span>#12</span><span>5 pkt</span></div>
-      <p><em>Jako</em> prowadząca zajęcia terenowe<br><em>chcę</em> zarezerwować kilka dyktafonów naraz na ten sam termin,<br><em>aby</em> cała grupa mogła jednocześnie nagrywać wywiady.</p>
+      <p><em>Jako</em> lekarz weterynarii<br><em>chcę</em> przed wizytą zobaczyć historię leczenia zwierzęcia,<br><em>aby</em> nie tracić czasu wizyty na wypytywanie właściciela.</p>
     </div>
   </div>
   <p>Każda część szablonu odpowiada na inne pytanie:</p>
@@ -72,13 +72,13 @@
 
   <div class="ex composer">
     <span class="tag">Ćwiczenie 6. Napisz historyjkę</span>
-    <p>Napisz historyjkę dla systemu wypożyczalni. Karta poniżej będzie się uzupełniać w trakcie pisania, a pod nią pojawią się wskazówki.</p>
+    <p>Napisz historyjkę dla systemu kliniki weterynaryjnej. Karta poniżej będzie się uzupełniać w trakcie pisania, a pod nią pojawią się wskazówki.</p>
     <label for="c-role">Jako</label>
-    <input type="text" id="c-role" placeholder="np. pracownik wypożyczalni" autocomplete="off">
+    <input type="text" id="c-role" placeholder="np. recepcjonistka" autocomplete="off">
     <label for="c-want">chcę</label>
-    <input type="text" id="c-want" placeholder="np. widzieć, kto ostatni wypożyczał dany egzemplarz" autocomplete="off">
+    <input type="text" id="c-want" placeholder="np. widzieć, którzy klienci nie potwierdzili jutrzejszych wizyt" autocomplete="off">
     <label for="c-why">aby</label>
-    <input type="text" id="c-why" placeholder="np. wiedzieć, kogo zapytać o uszkodzenie" autocomplete="off">
+    <input type="text" id="c-why" placeholder="np. zadzwonić do nich i w razie potrzeby zwolnić termin dla innych" autocomplete="off">
     <div class="card">
       <div class="cardhead"><span>Twoja historyjka</span></div>
       <p></p>
@@ -104,12 +104,12 @@
     <span class="tag">Ćwiczenie 7. Które kryterium nie jest spełnione?</span>
     <p>Każda z poniższych historyjek nie spełnia przede wszystkim jednego kryterium INVEST. Wskaż, którego.</p>
     <ol class="sort" data-opts="I|N|V|E|S|T">
-      <li data-a="T" data-why="Słowo „wygodny” jest subiektywne i nie da się sprawdzić, czy historyjka została zrealizowana.">Jako student chcę, aby system był wygodny, aby chętniej z niego korzystać.</li>
-      <li data-a="V" data-why="To zadanie techniczne, a nie historyjka. Użytkownik nie odczuje bezpośrednio, że tabela została utworzona.">Jako programista chcę utworzyć tabelę <code>reservations</code> w bazie danych, aby zapisywać rezerwacje.</li>
-      <li data-a="S" data-why="To epik, który obejmuje prawie cały system. Należy go podzielić na mniejsze historyjki.">Jako pracownik wypożyczalni chcę obsługiwać wypożyczenia, zwroty, naprawy, inwentaryzację i raporty, aby mieć porządek w sprzęcie.</li>
-      <li data-a="I" data-why="Historyjkę można zrealizować tylko razem z dwiema innymi. Można np. połączyć ją z historyjką #08.">Jako student chcę widzieć na potwierdzeniu rezerwacji termin zwrotu, aby go nie przegapić. <small>(Do realizacji tylko razem z historyjkami #08 „formularz rezerwacji” i #09 „kalendarz dostępności”.)</small></li>
-      <li data-a="E" data-why="Cel jest zrozumiały, ale zespół nie wie, skąd wziąć dane ani jak to zrobić. Najpierw potrzebne jest rozpoznanie (spike).">Jako kierowniczka wypożyczalni chcę, aby system przewidywał awarie sprzętu, aby wymieniać go z wyprzedzeniem.</li>
-      <li data-a="N" data-why="Historyjka narzuca szczegóły rozwiązania (kolor, położenie przycisku, adres API) i nie ma części „aby”. Nie zostawia miejsca na rozmowę.">Jako student chcę kliknąć niebieski przycisk „Rezerwuj” w prawym górnym rogu, który wysyła żądanie POST na <code>/api/v2/reservations</code>.</li>
+      <li data-a="T" data-why="Słowo „wygodny” jest subiektywne i nie da się sprawdzić, czy historyjka została zrealizowana.">Jako klient chcę, aby umawianie wizyt było wygodne, aby chętniej korzystać z systemu.</li>
+      <li data-a="V" data-why="To zadanie techniczne, a nie historyjka. Użytkownik nie odczuje bezpośrednio, że tabela została utworzona.">Jako programista chcę utworzyć tabelę <code>appointments</code> w bazie danych, aby zapisywać wizyty.</li>
+      <li data-a="S" data-why="To epik, który obejmuje prawie cały system. Należy go podzielić na mniejsze historyjki.">Jako recepcjonistka chcę obsługiwać wizyty, karty pacjentów, płatności, magazyn leków i raporty, aby mieć porządek w klinice.</li>
+      <li data-a="I" data-why="Historyjkę można zrealizować tylko razem z dwiema innymi. Można np. połączyć ją z historyjką #08.">Jako klient chcę widzieć na potwierdzeniu wizyty numer gabinetu, aby po przyjściu do kliniki wiedzieć, dokąd iść. <small>(Do realizacji tylko razem z historyjkami #08 „formularz umawiania wizyty” i #09 „kalendarz lekarzy”.)</small></li>
+      <li data-a="E" data-why="Cel jest zrozumiały, ale zespół nie wie, na podstawie jakich danych można to przewidzieć ani czy w ogóle jest to możliwe. Najpierw potrzebne jest rozpoznanie (spike).">Jako kierowniczka kliniki chcę, aby system przewidywał, którzy klienci nie przyjdą na wizytę, aby wcześniej zwalniać ich terminy.</li>
+      <li data-a="N" data-why="Historyjka narzuca szczegóły rozwiązania (kolor, położenie przycisku, adres API) i nie ma części „aby”. Nie zostawia miejsca na rozmowę.">Jako klient chcę kliknąć zielony przycisk „Umów wizytę” w prawym górnym rogu, który wysyła żądanie POST na <code>/api/v2/appointments</code>.</li>
     </ol>
   </div>
 
@@ -122,11 +122,11 @@
     <tr><td><b>Wtedy</b></td><td>Then</td><td>oczekiwany wynik</td></tr>
     <tr><td><b>Oraz</b> / <b>Ale</b></td><td>And / But</td><td>dodatkowy element w tej samej części</td></tr>
   </table>
-  <p>Jedna historyjka ma zwykle kilka scenariuszy: scenariusz podstawowy oraz scenariusze dla sytuacji wyjątkowych. W scenariuszach warto używać konkretnych danych, np. „Anna”, „aparat A-17”, „10 listopada”. Dzięki temu łatwiej zauważyć braki.</p>
+  <p>Jedna historyjka ma zwykle kilka scenariuszy: scenariusz podstawowy oraz scenariusze dla sytuacji wyjątkowych. W scenariuszach warto używać konkretnych danych, np. „Anna”, „pies Burek”, „10 listopada, 10:00”. Dzięki temu łatwiej zauważyć braki.</p>
 
   <div class="card">
     <div class="cardhead"><span>#14</span><span>3 pkt</span></div>
-    <p><em>Jako</em> student<br><em>chcę</em> przedłużyć wypożyczenie bez przychodzenia do wypożyczalni,<br><em>aby</em> dokończyć projekt bez ryzyka kary za spóźnienie.</p>
+    <p><em>Jako</em> właściciel zwierzęcia<br><em>chcę</em> przełożyć wizytę przez internet,<br><em>aby</em> nie musieć dzwonić do kliniki w godzinach jej pracy.</p>
   </div>
 
   <div class="ex order">
@@ -134,27 +134,26 @@
     <p>Klikaj linie w odpowiedniej kolejności, aby ułożyć scenariusz podstawowy dla historyjki #14.</p>
     <ul class="done"></ul>
     <ul class="pool">
-      <li data-n="4">Gdy Anna wybierze przedłużenie o 7 dni</li>
-      <li data-n="2">Zakładając, że Anna ma wypożyczony aparat A-17 z terminem zwrotu 10 listopada</li>
-      <li data-n="6">Oraz Anna otrzyma e-mail z nowym terminem zwrotu</li>
-      <li data-n="1">Scenariusz: przedłużenie, gdy aparat jest wolny</li>
-      <li data-n="5">Wtedy termin zwrotu zmieni się na 17 listopada</li>
-      <li data-n="3">Oraz nikt nie zarezerwował aparatu A-17 na okres 11–17 listopada</li>
+      <li data-n="4">Gdy 8 listopada Anna przełoży wizytę na 12 listopada na 16:00</li>
+      <li data-n="2">Zakładając, że Anna ma umówioną wizytę z psem Burkiem u dr. Nowaka 10 listopada o 10:00</li>
+      <li data-n="6">Oraz termin 10 listopada o 10:00 będzie dostępny dla innych klientów</li>
+      <li data-n="1">Scenariusz: przełożenie wizyty na wolny termin</li>
+      <li data-n="5">Wtedy wizyta Burka zostanie przeniesiona na 12 listopada na 16:00</li>
+      <li data-n="3">Oraz dr Nowak ma wolny termin 12 listopada o 16:00</li>
     </ul>
     <p class="score"></p>
   </div>
 
   <p>Poniżej znajdziesz drugi scenariusz tej samej historyjki, opisujący sytuację wyjątkową:</p>
-  <pre class="gherkin"><b>Scenariusz:</b> przedłużenie, gdy aparat jest zarezerwowany
-  <b>Zakładając, że</b> Anna ma wypożyczony aparat A-17 z terminem zwrotu 10 listopada
-  <b>Oraz</b> Bartek zarezerwował aparat A-17 od 12 listopada
-  <b>Gdy</b> Anna wybierze przedłużenie o 7 dni
-  <b>Wtedy</b> termin zwrotu pozostanie bez zmian
-  <b>Oraz</b> Anna zobaczy informację, że aparat jest zarezerwowany od 12 listopada
-  <b>Ale</b> będzie mogła przedłużyć wypożyczenie do 11 listopada</pre>
+  <pre class="gherkin"><b>Scenariusz:</b> próba przełożenia wizyty mniej niż 24 godziny przed terminem
+  <b>Zakładając, że</b> Anna ma umówioną wizytę z psem Burkiem u dr. Nowaka 10 listopada o 10:00
+  <b>Gdy</b> 9 listopada o 18:00 Anna spróbuje przełożyć wizytę
+  <b>Wtedy</b> wizyta pozostanie bez zmian
+  <b>Oraz</b> Anna zobaczy informację, że na mniej niż 24 godziny przed wizytą można ją przełożyć tylko telefonicznie
+  <b>Ale</b> zobaczy numer telefonu recepcji</pre>
   <div class="box">
     <span class="label">Zwróć uwagę</span>
-    Ostatnia linia scenariusza (przedłużenie do 11 listopada) nie wynikała z opisu zamawiającego. Pojawiła się dopiero podczas pisania scenariusza z konkretnymi datami. Takie kwestie należy uzgodnić z zamawiającym.
+    Podczas pisania tego scenariusza z konkretną datą i godziną pojawiło się pytanie, na które opis kliniki nie odpowiada: czy klient może przełożyć wizytę telefonicznie na mniej niż 24 godziny przed terminem i czy wiąże się to z opłatą? Takie kwestie należy uzgodnić z zamawiającym.
   </div>
 
   <h2>2.5. Dzielenie historyjek</h2>
@@ -162,24 +161,24 @@
 
   <div class="ex mc">
     <span class="tag">Ćwiczenie 9. Wybierz najlepszy podział</span>
-    <p>Epik: <b>„Jako student chcę wypożyczać sprzęt przez internet, aby nie tracić czasu na chodzenie do wypożyczalni.”</b> Który podział jest najlepszy?</p>
+    <p>Epik: <b>„Jako właściciel zwierzęcia chcę umawiać wizyty przez internet, aby nie musieć dzwonić do kliniki.”</b> Który podział jest najlepszy?</p>
     <div class="choices">
-      <button data-why="To podział na warstwy techniczne. Żadna z tych części sama w sobie nie daje wartości studentowi.">(1) formularz rezerwacji w interfejsie, (2) API rezerwacji, (3) tabele w bazie danych</button>
-      <button data-ok data-why="To podział według kroków procesu. Każda historyjka daje studentowi wartość. Już samo przeglądanie katalogu z dostępnością rozwiązuje część problemu.">(1) przeglądanie katalogu z dostępnością w wybranym dniu, (2) rezerwacja egzemplarza na termin, (3) anulowanie własnej rezerwacji, (4) powiadomienie, że sprzęt czeka na odbiór</button>
+      <button data-why="To podział na warstwy techniczne. Żadna z tych części sama w sobie nie daje wartości klientowi.">(1) formularz umawiania wizyty w interfejsie, (2) API wizyt, (3) tabele w bazie danych</button>
+      <button data-ok data-why="To podział według kroków procesu. Każda historyjka daje klientowi wartość. Już samo sprawdzanie wolnych terminów przez internet rozwiązuje część problemu.">(1) przeglądanie wolnych terminów wybranego lekarza, (2) umówienie wizyty w wolnym terminie, (3) odwołanie własnej wizyty, (4) przypomnienie SMS dzień przed wizytą</button>
       <button data-why="To podział pracy w zespole, a nie podział historyjki. W praktyce prowadzi do podziału na warstwy techniczne.">(1) część Kasi: frontend, (2) część Tomka: backend, (3) część Oli: testy</button>
     </div>
   </div>
 
   <h3>Sposoby dzielenia historyjek</h3>
   <table>
-    <tr><th>Sposób</th><th>Przykład dla wypożyczalni</th></tr>
-    <tr><td>Według kroków procesu</td><td>przeglądanie, rezerwacja, odbiór, zwrot</td></tr>
-    <tr><td>Najpierw scenariusz podstawowy, potem wyjątki</td><td>najpierw przedłużenie, gdy sprzęt jest wolny; potem przedłużenie, gdy sprzęt jest zarezerwowany</td></tr>
-    <tr><td>Według reguł biznesowych</td><td>najpierw rezerwacja jednego egzemplarza; potem rezerwacja grupowa dla prowadzących</td></tr>
-    <tr><td>Według rodzaju danych</td><td>najpierw laptopy; potem sprzęt z akcesoriami (aparat z obiektywami)</td></tr>
-    <tr><td>Według operacji</td><td>dodanie egzemplarza, zmiana opisu, wycofanie z użytku</td></tr>
-    <tr><td>Najpierw wersja prosta, potem rozbudowana</td><td>najpierw raport w pliku CSV; później wykresy w systemie</td></tr>
-    <tr><td>Rozpoznanie (spike)</td><td>sprawdzenie, czy można logować się przez USOS, przed historyjką o logowaniu</td></tr>
+    <tr><th>Sposób</th><th>Przykład dla kliniki</th></tr>
+    <tr><td>Według kroków procesu</td><td>wyszukanie terminu, umówienie wizyty, potwierdzenie, przypomnienie</td></tr>
+    <tr><td>Najpierw scenariusz podstawowy, potem wyjątki</td><td>najpierw przełożenie wizyty z wyprzedzeniem; potem próba przełożenia mniej niż 24 godziny przed wizytą</td></tr>
+    <tr><td>Według reguł biznesowych</td><td>najpierw wizyty o stałej długości (15 minut); potem zabiegi, których długość zależy od rodzaju</td></tr>
+    <tr><td>Według rodzaju danych</td><td>najpierw psy i koty; potem zwierzęta egzotyczne, które przyjmuje tylko jeden lekarz</td></tr>
+    <tr><td>Według operacji</td><td>dodanie zwierzęcia do konta klienta, zmiana jego danych, usunięcie</td></tr>
+    <tr><td>Najpierw wersja prosta, potem rozbudowana</td><td>najpierw przypomnienie SMS o wizycie; później przypomnienia o szczepieniach</td></tr>
+    <tr><td>Rozpoznanie (spike)</td><td>sprawdzenie, jak wysyłać SMS-y przez bramkę operatora, przed historyjką o przypomnieniach</td></tr>
   </table>
 
   <h2>2.6. Wymaganie funkcjonalne a historyjka</h2>
@@ -193,7 +192,7 @@
     <tr><td>Sprawdzanie</td><td>test zgodności z treścią wymagania</td><td>kryteria akceptacji</td></tr>
     <tr><td>Kiedy się sprawdza</td><td>umowy, audyty, regulacje prawne</td><td>gdy zamawiający jest dostępny, a zakres się zmienia</td></tr>
   </table>
-  <p>Porównaj wymaganie FR-14 z tematu 1 z historyjką #14. Obie opisują przedłużenie wypożyczenia. Historyjka wyjaśnia, po co jest ta funkcja, a wymaganie dokładnie określa jej zasady.</p>
+  <p>Porównaj wymaganie FR-14 z tematu 1 z historyjką #14. Obie opisują przełożenie wizyty. Historyjka wyjaśnia, po co jest ta funkcja, a wymaganie dokładnie określa jej zasady.</p>
 
   <h2>2.7. Podsumowanie i ćwiczenie samodzielne</h2>
   <div class="box">
@@ -211,10 +210,10 @@
     <span class="tag">Ćwiczenie samodzielne 2</span>
     <p>To ćwiczenie wykonujesz samodzielnie i nie musisz go nigdzie oddawać. Skorzystaj z wymagań zapisanych w ćwiczeniu samodzielnym 1.</p>
     <ol>
-      <li>Zapisz <b>6 historyjek</b> dla systemu wypożyczalni dla co najmniej trzech różnych ról. Każda historyjka musi zawierać część „aby”.</li>
+      <li>Zapisz <b>6 historyjek</b> dla systemu kliniki dla co najmniej trzech różnych ról. Każda historyjka musi zawierać część „aby”.</li>
       <li>Przy każdej historyjce wpisz identyfikatory powiązanych wymagań funkcjonalnych z ćwiczenia samodzielnego 1.</li>
       <li>Dla <b>dwóch</b> historyjek napisz po <b>dwa scenariusze</b> akceptacji: podstawowy i wyjątkowy. Użyj konkretnych danych.</li>
-      <li>Podziel epik „Jako pracownik wypożyczalni chcę obsługiwać zwroty sprzętu” na 3–5 mniejszych historyjek. Zapisz, z którego sposobu dzielenia skorzystałeś(-aś).</li>
+      <li>Podziel epik „Jako recepcjonistka chcę obsługiwać przyjęcie pacjenta w dniu wizyty” na 3–5 mniejszych historyjek. Zapisz, z którego sposobu dzielenia skorzystałeś(-aś).</li>
       <li>Wybierz swoją najsłabszą historyjkę i w 2–3 zdaniach napisz, którego kryterium INVEST nie spełnia.</li>
     </ol>
     <pre id="tpl-us">#__  [punkty: ?]          powiązane: FR-__, FR-__
